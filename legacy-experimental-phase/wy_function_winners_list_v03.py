@@ -4,7 +4,10 @@ import threading
 import time
 
 # Configuration
-FILTER_USDT = True  # True ONLY SYMBOLS WITH USDT
+FILTER_USDT = True  # True => only rank/track USDT pairs
+TOP_N = 20           # Number of top-volume coins to track
+
+# Fallback list, used only until the first ticker snapshot arrives
 SYMBOLS = [
     "BTCUSDT", "ETHUSDT", "BNBUSDT", "XRPUSDT", "DOGEUSDT", "PEPEUSDT", "GMTUSDT", "PHAUSDT",
     "STRAXUSDT", "ADAUSDT", "TRXUSDT", "HBARUSDT", "LQTYUSDT", "LUNAUSDT", "ALGOUSDT", "ZECUSDT",
@@ -12,50 +15,47 @@ SYMBOLS = [
     "LITUSDT", "RLCUSDT", "ACXUSDT", "VIBUSDT", "MOVEUSDT", "MEUSDT", "FIROUSDT", "AGLDUSDT",
     "VELODROMEUSDT"
 ]
-WINNERS = []
-LOSERS = []
 
-# Process percentage changes to identify winners and losers
+# Top TOP_N symbols ranked by 24h quote volume, highest first:
+# [{'symbol': ..., 'quoteVolume': ...}, ...]
+RANKED_BY_VOLUME = []
+
+# Rank symbols by 24h quote volume and keep the top TOP_N
 def process_data(data):
-    changes = []
+    volumes = []
     for item in data:
         try:
             symbol = item['s']
-            price_change_percent = float(item['P'])  # Percentage change
-            changes.append({'symbol': symbol, 'priceChangePercent': price_change_percent})
-        except KeyError:
+            if FILTER_USDT and "USDT" not in symbol:
+                continue
+            quote_volume = float(item['q'])  # 24h quote asset volume (USDT, for USDT pairs)
+            volumes.append({'symbol': symbol, 'quoteVolume': quote_volume})
+        except (KeyError, ValueError):
             continue
 
-    # Sort by percentage change
-    sorted_changes = sorted(changes, key=lambda x: x['priceChangePercent'], reverse=True)
+    # Sort by quote volume, highest first
+    sorted_by_volume = sorted(volumes, key=lambda x: x['quoteVolume'], reverse=True)
 
-    # Update winners and losers
-    global WINNERS, LOSERS
-    WINNERS = [item['symbol'] for item in sorted_changes[:10]]  # Top 10 winners
-    LOSERS = [item['symbol'] for item in sorted_changes[-10:]]  # Last 10 (losers)
+    global RANKED_BY_VOLUME
+    RANKED_BY_VOLUME = sorted_by_volume[:TOP_N]
 
     # Update SYMBOLS
     update_symbols()
 
-# Update the SYMBOLS array
+# Replace SYMBOLS with the current top-TOP_N coins by volume
 def update_symbols():
     global SYMBOLS
-    # Add winners if not already present
-    for symbol in WINNERS:
-        if symbol not in SYMBOLS:
-            SYMBOLS.append(symbol)
-    # Filter out symbols that don't include "USDT" if the filter is enabled
-    if FILTER_USDT:
-        SYMBOLS = [symbol for symbol in SYMBOLS if "USDT" in symbol]
+    if RANKED_BY_VOLUME:
+        SYMBOLS = [item['symbol'] for item in RANKED_BY_VOLUME]
     # print("[INFO] Updated SYMBOLS list:", SYMBOLS)
 
 # Export the updated list
 def get_updated_symbols():
     return SYMBOLS
 
-# Export the updated losers list
-def get_losers():
-    return LOSERS
+# Export the current top-TOP_N ranking (symbol + quote volume)
+def get_ranked_by_volume():
+    return RANKED_BY_VOLUME
 
 # Callback to process WebSocket messages
 def on_message(ws, message):

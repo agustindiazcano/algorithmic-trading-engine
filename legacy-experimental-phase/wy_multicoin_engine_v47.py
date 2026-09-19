@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 import pandas as pd
 import time
-from wy_function_winners_list_v03 import start_websocket, get_updated_symbols, get_losers
+from wy_function_winners_list_v03 import start_websocket, get_updated_symbols
 import wy_function_winners_list_v03
 from binance.client import Client
 from binance.enums import SIDE_BUY, SIDE_SELL
@@ -15,8 +15,7 @@ import asyncio
 from dotenv import load_dotenv
 import subprocess
 import math
-# ================== WEYLAND YUTANI CORP. ===================
-# ================== PROMETHEUS V01 =========================
+# ================== V47 =========================
 # ================== CONFIGURATION ==========================
 # BUY LOGIC: SIMPLE - SELL LOGIC: BOLLINGER LATERAL ; WITH LOSERS ; V6 REAL
 REAL_TRADES = False  # True => Real Orders ; False => Simulation
@@ -30,9 +29,9 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 # Configuration files
-TRADE_HISTORY_FILE = "weyland_multicoin_prometheus_v42.json"
-OPEN_TRADES_FILE = "weyland_multicoin_prometheus_v42_open_trades.json"
-DATAFRAMES_PATH = "dataframes_prometheus_v42/"
+TRADE_HISTORY_FILE = "wy_multicoin__v47.json"
+OPEN_TRADES_FILE = "wy_multicoin__v47_open_trades.json"
+DATAFRAMES_PATH = "dataframes__v47/"
 
 # Strategy parameters
 STOP_LOSS_PERCENT = 0.02       # 2% initial stop-loss
@@ -53,8 +52,6 @@ trade_history = []  # All recorded operations (buys/sells)
 open_trades = []    # List of open trades
 dataframes = {}     # Stores candles for each symbol
 latest_prices = {}  # Global dict to store the most recent trade price per symbol
-WINNERS = []         # Top 10 winners
-LOSERS = []          # Last 10 losers
 
 # ==================  kline API ================== 
 
@@ -200,7 +197,7 @@ def check_macd_slope_condition(df, bars=3, mode="<=0"):
 
 
 # ==================  FILE BUILDER HEAD, CUT-IN OR CUT-AWAY STRATEGY ==================
-def generate_and_run_crypto_script(symbol, base_script="weyland_yutani_base_v05.py", output_dir="crypto_scripts"):
+def generate_and_run_crypto_script(symbol, base_script="wy_base_v05.py", output_dir="crypto_scripts"):
     # Verify the base file exists
     if not os.path.exists(base_script):
         print(f"[ERROR] Base file {base_script} does not exist.")
@@ -219,7 +216,7 @@ def generate_and_run_crypto_script(symbol, base_script="weyland_yutani_base_v05.
     os.makedirs(output_dir, exist_ok=True)
 
     # Create a dedicated file for the coin
-    crypto_script = os.path.join(output_dir, f"weyland_yutani_{symbol}_05.py")
+    crypto_script = os.path.join(output_dir, f"wy_{symbol}_05.py")
 
     # Replace the symbol in the script
     script_per_crypto = script_content.replace('SYMBOL = "XRPUSDT"', f'SYMBOL = "{symbol}"')
