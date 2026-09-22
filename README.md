@@ -1,6 +1,6 @@
-# Crypto Quant Trading Platform
+# AI Crypto Trading Agent
 
-Quantitative algorithmic trading platform for Binance: real-time market ingestion via WebSockets, a technical-signal engine, risk management, and order execution -- evolving from a set of standalone scripts into a service architecture with transactional persistence, cached state, and a control panel.
+A quantitative trading system for Binance that starts as a rule-based bot and is built to grow into a decision-making agent: real-time market ingestion via WebSockets, a technical-signal engine, risk management, and order execution today, with sentiment-aware and self-tuning strategy agents on the roadmap -- evolving from a set of standalone scripts into a service architecture with transactional persistence, cached state, and a control panel.
 
 Current status: project under active refactoring. `REAL_TRADES=False` (simulation mode) until Phase 1 is complete and the strategy has been validated through backtesting. Do not trade real capital before then.
 
@@ -93,6 +93,15 @@ The position is closed if any of the following occurs:
 | `pyproject.toml` | Dependency and build management | Replaces a loose `requirements.txt`; reproducible environment with a lockfile (`uv`/`poetry`), project metadata, and tool configuration (ruff, pytest) in a single file. |
 | `logging` / `loguru` | Observability | Replaces the ~60 `print()` calls in the current code; levels, file rotation, structured logs. |
 
+### Target (Phase 4-5, experimental)
+
+| Piece | Use | Why |
+|---|---|---|
+| `pgvector` (reuses the Phase 2 Postgres instance) | Sentiment/news vector store | Embeds ingested news, social posts, and on-chain alerts so the RAG pipeline can retrieve the most relevant context for a symbol before scoring its sentiment -- no separate vector database service to operate. |
+| LLM provider (pluggable via an `LLM_PROVIDER`-style factory, same pattern as the exchange client) | Sentiment classification and the strategy decision agent | Classifies retrieved text into a sentiment signal and, separately, chooses which strategy component should be active for current conditions. Kept behind a factory so the provider can change without touching `trading/`. |
+| News/social/on-chain APIs (e.g. a crypto news aggregator, a fear-and-greed index endpoint) | Sentiment data ingestion | Raw input for the RAG pipeline; each source is fetched, chunked, and embedded before being queried. |
+| `DEAP` (or a hand-rolled genetic algorithm module) | Strategy parameter evolution | Evolves strategy parameters (score weights, stop-loss/trailing-stop percentages, indicator periods) against the Phase 3 backtesting engine as the fitness function -- a parsimonious choice over a full ML framework, since the search space here is a fixed set of numeric parameters, not a learned function. |
+
 ---
 
 ## Phased roadmap
@@ -119,6 +128,28 @@ Goal: make the current system correct and safe in simulation mode before touchin
 - Beta vs. BTC calculation as a risk filter.
 - Backtesting engine over historical data in Postgres.
 - Empirical calibration of `min_score` and risk parameters against backtesting results.
+
+### Phase 4 -- Market sentiment intelligence (RAG + decision agents), experimental
+
+Goal: give the bot a signal that plain price/volume indicators cannot see -- news, social sentiment, and on-chain events -- and let an agent act on it, without letting that agent bypass the existing risk layer.
+
+- Sentiment ingestion: scheduled API calls to news/social/on-chain sources per tracked symbol, stored as raw text with a timestamp and source.
+- RAG pipeline: chunk and embed ingested text into the shared `pgvector` store (same Postgres instance as Phase 2, a new table rather than a new database), then retrieve the most relevant context for a symbol when a decision is needed.
+- Sentiment scoring: an LLM call classifies the retrieved context into a sentiment signal (e.g. bullish/neutral/bearish, or a bounded numeric score) for the symbol under evaluation.
+- Circuit-breaker agent: monitors sentiment and news-event signals and can veto new entries or force-close existing positions on a symbol -- for example, on a detected exchange hack, a regulatory action, a stablecoin depeg, or a sharp sentiment-price divergence. This agent can only ever make trading *more* conservative (block or close), never open a position or override the risk layer's caps; every halt decision is logged with its trigger and reasoning, the same way a rejected order is logged today.
+- Strategy decision agent: given the current regime (Phase 3), the indicator scores (existing `strategy.py`), and the sentiment signal (this phase), chooses which strategy component should be active (e.g. MACD-trend vs. Bollinger-range vs. sitting out) instead of that choice being hardcoded. Its output is a strategy selection, not an order -- it still goes through the normal entry/exit and risk logic.
+- Both agents are advisory/gating signals that feed into the existing `trading/strategy.py` and `trading/risk.py` layer; neither one calls the exchange client directly, following the same separation-of-concerns rule as the rest of the trading layer.
+- This phase is design/prototype status, same as Phase 3's regime detector was before validation -- ship the ingestion and scoring first, validate the sentiment signal's actual predictive value against historical data, and only then wire the circuit-breaker into live decisions.
+
+### Phase 5 -- Genetic algorithm strategy optimization, experimental
+
+Goal: replace hand-tuned strategy parameters (the currently arbitrary `min_score=7`, the fixed 2%/5% stop-loss/trailing-stop, indicator periods) with values found by evolving them against real backtest performance.
+
+- Encode a strategy configuration (score weights, thresholds, stop-loss/trailing-stop percentages, indicator periods) as a genome.
+- Fitness function: run the Phase 3 backtesting engine on historical data for a candidate genome and score it on a risk-adjusted metric (e.g. profit factor or Sharpe ratio adjusted for max drawdown, not raw return alone -- raw return rewards reckless parameter sets).
+- Evolve a population of configurations over generations (selection, crossover, mutation) using `DEAP` or an equivalent library.
+- Runs entirely offline against historical data, out-of-band from live trading, mirroring how the ML comparison track is meant to work in the other project's roadmap -- its output is a candidate parameter set for a human to review, never a set of parameters auto-applied to the live bot.
+- Any winning configuration must still pass the same Phase 3 validation step (backtest report reviewed before use) before being adopted -- a genetic algorithm optimizing against historical data can overfit to that specific history, so a proposed configuration is a hypothesis to validate out-of-sample, not a result to trust directly.
 
 ---
 
@@ -193,10 +224,24 @@ crypto_bot_project/
 │   │   ├── risk.py                  # Stop-loss, trailing stop, position sizing
 │   │   └── executor.py              # Orchestrates buy/sell based on the rules
 │   │
-│   └── backtesting/
-│       ├── data_loader.py           # Loads historical candles into Postgres
-│       ├── engine.py                # Historical simulation of the strategy
-│       └── reports.py               # Metrics: drawdown, win rate, profit factor
+│   ├── backtesting/
+│   │   ├── data_loader.py           # Loads historical candles into Postgres
+│   │   ├── engine.py                # Historical simulation of the strategy
+│   │   └── reports.py               # Metrics: drawdown, win rate, profit factor
+│   │
+│   ├── sentiment/                   # Phase 4 (experimental): RAG ingestion and scoring
+│   │   ├── ingestion.py             # Scheduled pulls from news/social/on-chain APIs
+│   │   ├── rag_pipeline.py          # Chunking, embedding, and retrieval over pgvector
+│   │   └── scoring.py               # LLM-based sentiment classification
+│   │
+│   ├── agents/                      # Phase 4 (experimental): advisory/gating agents
+│   │   ├── circuit_breaker.py       # Can veto entries or force-close on adverse signals
+│   │   └── strategy_selector.py     # Chooses active strategy component (trend/range/sentiment)
+│   │
+│   └── optimization/                # Phase 5 (experimental): genetic algorithm search
+│       ├── genome.py                # Strategy configuration encoded as a genome
+│       ├── fitness.py               # Wraps the backtesting engine as a fitness function
+│       └── evolve.py                # Selection, crossover, mutation loop (DEAP-based)
 │
 └── tests/
     ├── test_indicators.py

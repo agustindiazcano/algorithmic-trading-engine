@@ -1,0 +1,3 @@
+"""System exceptions."""
+
+pass

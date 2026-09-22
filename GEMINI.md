@@ -1,4 +1,4 @@
-# Project Context: Crypto Quant Trading Platform
+# Project Context: AI Crypto Trading Agent
 
 ## 1. System Role and Identity
 
@@ -6,13 +6,13 @@ You are a Senior Backend and Quantitative Systems Engineer specializing in real-
 
 ## 2. Project Overview
 
-Name: `crypto-quant-trading-platform`
+Name: `ai-crypto-trading-agent`
 
-Description: An asynchronous, fault-tolerant algorithmic trading platform for Binance that ingests real-time market data via WebSockets, ranks tradable symbols by liquidity and technical score, and executes buy/sell orders under an explicit risk-management layer. The system started as two standalone scripts sharing state through Python globals and threads (`wy_multicoin__v47.py`, `wy_function_winners_list_v03.py`) and is being rebuilt into a service architecture with transactional persistence, cached shared state, and a control API.
+Description: An asynchronous, fault-tolerant algorithmic trading system for Binance that ingests real-time market data via WebSockets, ranks tradable symbols by liquidity and technical score, and executes buy/sell orders under an explicit risk-management layer. It starts as a rule-based bot and is deliberately architected to grow into a decision-making agent: later phases add a sentiment/RAG signal, an advisory circuit-breaker and strategy-selection agent, and a genetic-algorithm optimizer for strategy parameters — all built on top of the same risk layer, never bypassing it. The system started as two standalone scripts sharing state through Python globals and threads (`wy_multicoin__v47.py`, `wy_function_winners_list_v03.py`) and is being rebuilt into a service architecture with transactional persistence, cached shared state, and a control API.
 
-Core Pattern: Event-driven ingestion (WebSocket streams) feeding a pure strategy/scoring layer, with execution and risk management isolated from both. The strategy layer never touches the exchange client or the database directly — it consumes market data and open-trade state and returns decisions; a separate executor layer turns those decisions into orders.
+Core Pattern: Event-driven ingestion (WebSocket streams) feeding a pure strategy/scoring layer, with execution and risk management isolated from both. The strategy layer never touches the exchange client or the database directly — it consumes market data and open-trade state and returns decisions; a separate executor layer turns those decisions into orders. From Phase 4 onward, advisory agents (sentiment circuit-breaker, strategy selector) feed additional signals into this same strategy layer instead of gaining their own path to the exchange client.
 
-The project is organized around Phase 1 (bug-fix stabilization of the existing scripts, in progress — no new infrastructure is added until this phase is closed), Phase 2 (refactor into services: `pyproject.toml`, structured logging, Postgres persistence, Redis shared state, Docker, FastAPI control panel, WebSocket reconnection with exponential backoff), and Phase 3 (market intelligence and validation: regime detection, BTC-beta risk filter, backtesting engine, empirical calibration of strategy thresholds). See Sections 5a-5c for phase-specific directives. See `README.md` for the full bug list (18 items), the scoring/entry/exit rules, and the target folder tree.
+The project is organized around Phase 1 (bug-fix stabilization of the existing scripts, in progress — no new infrastructure is added until this phase is closed), Phase 2 (refactor into services: `pyproject.toml`, structured logging, Postgres persistence, Redis shared state, Docker, FastAPI control panel, WebSocket reconnection with exponential backoff), Phase 3 (market intelligence and validation: regime detection, BTC-beta risk filter, backtesting engine, empirical calibration of strategy thresholds), Phase 4 (market sentiment intelligence: RAG pipeline over news/social/on-chain data, an advisory circuit-breaker agent, and a strategy-selection agent — experimental/roadmap), and Phase 5 (genetic-algorithm optimization of strategy parameters against the Phase 3 backtester — experimental/roadmap). See Sections 5a-5e for phase-specific directives. See `README.md` for the full bug list (18 items), the scoring/entry/exit rules, and the target folder tree.
 
 ## 3. Tech Stack
 
@@ -30,6 +30,8 @@ The project is organized around Phase 1 (bug-fix stabilization of the existing s
 - Observability: `logging`/`structlog` from Phase 2 onward — replaces the ~60 `print()` calls in the current scripts.
 - Backtesting (Phase 3): a dedicated `backtesting/` engine replaying historical candles from Postgres against the same `strategy.py` used live — never a second, drifted copy of the entry/exit logic.
 - Market Context (Phase 3): macro-timeframe ADX for regime detection (ranging vs. trending), rolling covariance/variance vs. BTC returns for beta calculation.
+- Sentiment / RAG (Phase 4, experimental): news/social/on-chain source APIs for ingestion; `pgvector` on the existing Postgres instance for embedding storage and retrieval (no separate vector database service); an LLM provider behind a factory interface (same pattern as Section 4's exchange-client abstraction) for sentiment classification and strategy selection.
+- Strategy Optimization (Phase 5, experimental): `DEAP` (or an equivalent genetic-algorithm library) to evolve strategy parameters against the Phase 3 backtesting engine as the fitness function.
 
 ## 4. Architecture Directives and Constraints
 
@@ -45,6 +47,9 @@ Never write market-data ingestion, strategy/scoring logic, order execution, and 
 - `src/state/redis_client.py` for shared live-price and open-trade state (Phase 2+).
 - `src/market_context/` for the Phase 3 regime detector and beta calculator.
 - `src/backtesting/` for the historical simulation engine, kept separate because it reads from Postgres/CSV and never opens a live WebSocket or calls the exchange.
+- `src/sentiment/` for the Phase 4 ingestion, RAG pipeline, and sentiment scoring — no strategy or risk logic here.
+- `src/agents/` for the Phase 4 circuit-breaker and strategy-selector agents — these produce signals and selections consumed by `trading/strategy.py`, never orders.
+- `src/optimization/` for the Phase 5 genetic-algorithm genome, fitness function, and evolution loop — reads from `src/backtesting/`, never from live state.
 
 ### Strategy Layer Has No Side Effects
 `src/trading/strategy.py` and `src/trading/indicators.py` must be pure functions: given a DataFrame of candles and the current open-trade state, they return a score or a decision (`buy`/`sell`/`hold`) — they never call the Binance client, never write to the database, and never send a Telegram message. This is what makes the scoring logic unit-testable without mocking a websocket, and what lets the same code run identically inside the live engine and the Phase 3 backtester.
@@ -66,6 +71,15 @@ Any ambiguity in order execution (an exception, a malformed exchange response, a
 
 ### No Direct Database or Exchange Access from the Backtesting Engine's Strategy Call
 `src/backtesting/engine.py` calls into `src/trading/strategy.py` exactly as the live engine does, but must never call `src/services/binance_api.py` or send Telegram notifications. It reads historical candles (from Postgres or CSV) and writes results through `src/backtesting/reports.py` only.
+
+### Advisory Agents Can Only Restrict, Never Execute (Phase 4)
+The `src/agents/` circuit-breaker and strategy-selector must never call `src/services/binance_api.py` directly, and must never be given a code path that opens a position. The circuit-breaker's only allowed effects are: block a new entry, or request that `trading/executor.py` close an existing position through the normal `close_position` path — the same path a stop-loss or trailing-stop triggers, not a separate privileged one. The strategy-selector's only output is a choice of which strategy component is active (e.g. MACD-trend vs. Bollinger-range); it still hands that choice to the existing entry/exit and risk logic in `trading/`, it does not shortcut it. Every agent decision (a block, a forced close, a strategy switch) must be logged with its trigger and reasoning, the same way a rejected order is logged under Section 10.
+
+### RAG Retrieval Failures Fail Open, Agent Decisions Fail Closed (Phase 4)
+If `src/sentiment/rag_pipeline.py` or the embeddings/LLM call it depends on fails or times out, the sentiment signal for that cycle is treated as "unavailable," not as "neutral" or "bullish" — the strategy-selector and circuit-breaker must explicitly handle a missing sentiment signal by falling back to the Phase 1-3 indicator-only behavior, not by guessing. This is the inverse of Section 4's "fail-closed on real money" rule and is intentional: a missing sentiment signal should not silently block trading that the underlying indicators still support, but a *present* circuit-breaker halt signal must always be obeyed.
+
+### Genetic Optimization Runs Off the Critical Path and Never Self-Applies (Phase 5)
+`src/optimization/` must never run inside the live trading loop or be invoked from `trading/`, `services/`, or `agents/` — it is triggered manually or by a separate offline job, exactly like the Phase 3 backtester it depends on. A completed optimization run produces a candidate parameter set written to a report/file for human review; nothing in this module is permitted to write directly to the live strategy configuration (`config.py`, environment variables, or the database row that defines the running strategy's parameters).
 
 ### Strict Typing
 Type hints are not optional. All code must pass `mypy --strict`. Use explicit `Optional`, `Union` (or `|`), and precise return types on every public function — no bare `Any` unless justified with an inline comment. This matters more than usual here: an untyped `None` silently flowing into a price or quantity calculation is how real orders get placed with wrong sizes (see bugs #4 and #5 around RSI/score handling `None`/`0` incorrectly).
@@ -96,6 +110,21 @@ No new infrastructure (Postgres, Redis, Docker, FastAPI) is introduced during th
 3. Backtesting Engine (`backtesting/`): replays historical candles through the same `strategy.py` and `risk.py` used live (see Section 4's constraint), and reports drawdown, win rate, and profit factor.
 4. Calibration: `min_score` and the risk parameters (`STOP_LOSS_PERCENT`, `TRAILING_STOP_PERCENT`) must be empirically justified by backtesting results before being changed from their current defaults — do not hand-tune these against a hunch.
 5. `REAL_TRADES=True` is not enabled for any account until a Phase 3 backtest report exists for the exact strategy configuration in use.
+
+## 5d. Development Phases — Phase 4 (Market Sentiment Intelligence: RAG + Decision Agents, Experimental)
+
+1. Ingestion (`sentiment/ingestion.py`): scheduled pulls from news/social/on-chain APIs per tracked symbol, stored with source and timestamp — treat this as any other external API integration under Section 4's constraints (no blocking I/O inside async code, explicit error handling, no bare `except Exception`).
+2. RAG Pipeline (`sentiment/rag_pipeline.py`): chunk and embed ingested text into a `pgvector` table on the existing Postgres instance (Phase 2); retrieve the most relevant context for a symbol on demand. Do not stand up a separate vector database service — this reuses Phase 2's infrastructure.
+3. Sentiment Scoring (`sentiment/scoring.py`): an LLM call classifies retrieved context into a bounded sentiment signal. The LLM provider must be behind a factory interface (mirroring Section 4's exchange-client abstraction), so the provider can change via configuration only.
+4. Circuit-Breaker Agent (`agents/circuit_breaker.py`) and Strategy-Selector Agent (`agents/strategy_selector.py`): see the "Advisory Agents Can Only Restrict, Never Execute" constraint in Section 4 — this is the binding rule for both. Write the test for a circuit-breaker trigger (Section 6b) before implementing the trigger condition.
+5. This phase is design/prototype status. Ship ingestion and scoring first; validate the sentiment signal's actual predictive value against historical data (using the Phase 3 backtester) before wiring the circuit-breaker into any live decision path.
+
+## 5e. Development Phases — Phase 5 (Genetic Algorithm Strategy Optimization, Experimental)
+
+1. Genome (`optimization/genome.py`): encode a strategy configuration (score weights, `min_score`, `STOP_LOSS_PERCENT`, `TRAILING_STOP_PERCENT`, indicator periods) as a genome with explicit, documented bounds per gene — do not let the search wander into economically meaningless values (e.g. a negative stop-loss).
+2. Fitness Function (`optimization/fitness.py`): wraps `src/backtesting/engine.py` and scores a candidate on a risk-adjusted metric (profit factor or drawdown-adjusted Sharpe, not raw return) — see the "Genetic Optimization Runs Off the Critical Path" constraint in Section 4.
+3. Evolution Loop (`optimization/evolve.py`): selection, crossover, and mutation over generations using `DEAP` or an equivalent library, run as a standalone offline job.
+4. Any winning configuration is a candidate for human review, output to a report — never auto-applied to the live strategy configuration. Treat it as a hypothesis to validate out-of-sample (a held-out time range not used during evolution), since a genetic search against historical data can overfit to that specific history.
 
 ## 6. Coding Standards and Non-Negotiable Rules
 
@@ -162,10 +191,24 @@ crypto_bot_project/
             data_loader.py
             engine.py
             reports.py
+        sentiment/                 # Phase 4 (experimental): RAG ingestion and scoring
+            ingestion.py
+            rag_pipeline.py
+            scoring.py
+        agents/                    # Phase 4 (experimental): advisory/gating agents
+            circuit_breaker.py
+            strategy_selector.py
+        optimization/              # Phase 5 (experimental): genetic algorithm search
+            genome.py
+            fitness.py
+            evolve.py
     tests/
         unit/
             trading/
             market_context/
+            sentiment/
+            agents/
+            optimization/
         integration/
         performance/
     alembic/                       # Phase 2
@@ -187,6 +230,8 @@ Before writing or modifying any file that touches the following areas, pause and
 - Any change to Alembic migration files that drops a column or table (Phase 2+).
 - Any change to the WebSocket reconnection logic in `services/websockets.py` that could cause the bot to silently run on stale market data.
 - Any change to `.env` files, API keys, or Telegram credentials.
+- Any change to `agents/circuit_breaker.py` or `agents/strategy_selector.py` that gives either agent a direct call path to `services/binance_api.py`, or that lets a missing/failed sentiment signal be treated as a specific sentiment value instead of "unavailable" (Section 4, Phase 4 constraints).
+- Any change to `optimization/` that writes a result directly into the live strategy configuration instead of a reviewable report.
 - Before running an Alembic upgrade/downgrade command (Phase 2+), confirm the current revision (`alembic current`) and the target revision with the user.
 - Before deleting or moving a file that defines database models or API route registrations (Phase 2+), list what will be affected and ask for confirmation.
 
@@ -210,8 +255,12 @@ When refusing an action under this section, always state the correct alternative
 | `MIN_ADX` | Minimum ADX required for a valid entry signal (default: 25) |
 | `TOP_N` | Number of top-volume symbols tracked by the Market Scanner (default: 20) |
 | `MIN_SCORE` | Minimum score threshold for a symbol to be trade-eligible (default: 7, uncalibrated — see Phase 3) |
-| `MCP_SERVER_URL` | Not applicable to this project |
 | `MAX_POSITION_USDT` | Phase 2: hard cap enforced by risk validation before any order reaches the exchange client |
+| `SENTIMENT_API_KEYS` | Phase 4: credentials for the configured news/social/on-chain sources (one per source, not a single shared secret) |
+| `LLM_PROVIDER` | Phase 4: active LLM provider for sentiment scoring and the strategy-selector agent (e.g. `openai`, `gemini`, `groq`) — changeable without touching `sentiment/` or `agents/` code |
+| `CIRCUIT_BREAKER_ENABLED` | Phase 4: master switch for whether the circuit-breaker agent's halt decisions are obeyed (default: `False` until validated) |
+| `GA_POPULATION_SIZE` | Phase 5: genetic algorithm population size per generation |
+| `GA_GENERATIONS` | Phase 5: number of generations to evolve before stopping |
 
 ## 10. Risk and Execution Guardrail Contract
 
