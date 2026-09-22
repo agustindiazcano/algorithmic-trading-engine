@@ -46,7 +46,7 @@ def fetch_massive_history(symbol="PEPEUSDT", total_candles=15000):
     return df
 
 # ==========================================
-# 🎯 CALIBRADOR DE PRECISIÓN "DÍAZ-CANO 12"
+# 🎯 CALIBRADOR DE PRECISIÓN "DÍAZ-CA 12"
 # ==========================================
 def find_true_z(df):
     """
@@ -59,7 +59,7 @@ def find_true_z(df):
         z_real = umbral_exito['vector_z'].mean()
         z_std = umbral_exito['vector_z'].std()
         
-        console.print(f"\n[bold green]✅ CALIBRACIÓN COMPLETADA (DÍAZ-CANO 12)[/bold green]")
+        console.print(f"\n[bold green]✅ CALIBRACIÓN COMPLETADA (DÍAZ-CA 12)[/bold green]")
         console.print(f"Para PEPE, tu presión de [bold white]12.0[/] equivale a un Vector Z de: [bold cyan]{z_real:.4f}[/]")
         console.print(f"Desviación de Profundidad: ±{z_std:.4f}")
         return z_real

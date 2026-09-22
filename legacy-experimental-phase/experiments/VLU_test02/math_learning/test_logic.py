@@ -9,7 +9,7 @@ class DynamicCausalBrain:
     def __init__(self, n_neurons=5, A_dc=1.618):
         """
         Inicializa la DCNN con la constante fundamental.
-        A_dc: Agustin Diaz-Cano Coefficient.
+        A_dc: Agustin Di-Ca Coefficient.
         Controla la Amplitud Dinámica de la respiración fractal.
         """
         self.A_dc = A_dc  # La Firma del Creador

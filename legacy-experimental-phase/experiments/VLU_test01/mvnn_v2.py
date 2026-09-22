@@ -124,7 +124,7 @@ class OrbitalVNN:
             # Esto es equivalente a rotar la esfera infinitamente rápido (Spin)
             total_orbital_error = 0
             for r_point in sample_radii:
-                # Distancia al anillo aprendido más cercano
+                # Distancia al anillo aprendido más cerca
                 dist_to_orbit = np.min(np.abs(self.ring_radii - r_point))
                 total_orbital_error += dist_to_orbit
             
@@ -184,5 +184,5 @@ print(f"📊 RESULTADOS: SATURNO GIRATORIO (SPIN INTERNO)")
 print("-" * 60)
 print(f"❌ MLP (Estadístico):    {acc_mlp*100:.1f}% -> Ve 'ruido' porque los pixeles cambiaron de lugar.")
 print(f"⚠️ MVNN (Rígida):       {acc_rigid*100:.1f}% -> FALLA. Busca puntos en coordenadas fijas.")
-print(f"🌀 Orbital VNN:         {acc_orbital*100:.1f}% -> DOMA. Entiende la trayectoria, no el punto.")
+print(f"🌀 Orbital VNN:         {acc_orbital*100:.1f}% -> DO. Entiende la trayectoria, no el punto.")
 print("-" * 60)

@@ -5,7 +5,7 @@ import requests
 import time
 import random
 
-# 🔒 CONSTANTES UNIVERSALES (Leyes de Diaz-Cano)
+# 🔒 CONSTANTES UNIVERSALES (Leyes de Di-Ca)
 K_UNIVERSAL = 0.2816
 ALPHA_UNIVERSAL = 0.2639
 PEPE_SATURACION = 12.0

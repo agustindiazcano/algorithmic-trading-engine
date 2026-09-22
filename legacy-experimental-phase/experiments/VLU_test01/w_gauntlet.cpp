@@ -197,7 +197,7 @@ int main() {
     t.y = dist_coord(rng);
   }
 
-  // Simulamos que el robot ve los 50 obstáculos más cercanos (Sensor Radius)
+  // Simulamos que el robot ve los 50 obstáculos más cercas (Sensor Radius)
   std::vector<Point> sensor_batch(50);
   for (int i = 0; i < 50; ++i)
     sensor_batch[i] = obstacles[i];

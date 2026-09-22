@@ -13,7 +13,7 @@ DEFAULT_ALPHA = 0.2639
 SATURATION_THRESHOLD = 0.25  # Mercado Normal
 EXTREME_TURBULENCE = 3.0     # Saturación Total (Reversión)
 
-class DiazCanoFluidBot:
+class DiCaFluidBot:
     def __init__(self, symbol='BTCUSDT', timeframe='1h', limit=1000):
         self.symbol = symbol.upper()
         self.timeframe = timeframe
@@ -51,7 +51,7 @@ class DiazCanoFluidBot:
     # --- B. FÍSICA DE FLUIDOS (Core Logic) ---
     def calculate_pressure(self, k, alpha):
         """
-        Calcula el Índice de Presión de Diaz-Cano (DCPI) Normalizado.
+        Calcula el Índice de Presión de Di-Ca (DCPI) Normalizado.
         Nueva Lógica V2: Medir Potencia Relativa al Promedio Reciente.
         """
         # 1. Flujo Bruto: Potencia del movimiento actual
@@ -219,13 +219,13 @@ class DiazCanoFluidBot:
         ax2.axhline(EXTREME_TURBULENCE, color='red', linestyle='--', label='Saturacion (3.0)')
         ax2.tick_params(axis='y', labelcolor=color)
         
-        plt.title(f"Diaz-Cano Fluid Bot: {self.symbol} \n(K={self.best_k:.3f}, Alpha={self.best_alpha:.3f})")
+        plt.title(f"Di-Ca Fluid Bot: {self.symbol} \n(K={self.best_k:.3f}, Alpha={self.best_alpha:.3f})")
         plt.show()
 
 # --- EJECUCIÓN ---
 if __name__ == "__main__":
     symbol = sys.argv[1] if len(sys.argv) > 1 else 'BTCUSDT'
-    bot = DiazCanoFluidBot(symbol=symbol, limit=1000)
+    bot = DiCaFluidBot(symbol=symbol, limit=1000)
     bot.fetch_data()
     
     if not bot.df.empty:

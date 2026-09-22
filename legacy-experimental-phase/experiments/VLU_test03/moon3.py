@@ -43,7 +43,7 @@ def run_cpu_monitor():
         op_code = "MAINTAIN_PHASE_STABILITY"
         status = "[bold cyan]IDLE[/bold cyan]"
 
-    # --- SALIDA DE CONSOLA ESTILO DÍAZ-CANO ---
+    # --- SALIDA DE CONSOLA ESTILO DÍAZ-CA ---
     console.print(Panel(
         f"Instrucción Detectada: [bold yellow]{instruction}[/bold yellow]\n"
         f"Código de Operación: [bold white]{op_code}[/bold white]\n"

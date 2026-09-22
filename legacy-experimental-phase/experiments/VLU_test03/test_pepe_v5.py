@@ -67,7 +67,7 @@ def procesar_monster_csv(input_file, output_file):
 
     # 4. GUARDADO FINAL
     df.to_csv(output_file, index=False)
-    print(f"🏁 DATASET DOMADO: {output_file}")
+    print(f"🏁 DATASET DODO: {output_file}")
 
 if __name__ == "__main__":
     # Poné acá el nombre exacto de tu archivo

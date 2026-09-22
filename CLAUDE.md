@@ -162,7 +162,13 @@ To avoid import-path and `ModuleNotFoundError` issues and keep module boundaries
 
 ```
 crypto_bot_project/
-    legacy/
+    legacy-experimental-phase/
+        wy_multicoin_engine_v47.py
+        wy_function_winners_list_v03.py
+        experiments/
+            VLU_test01/          # C++/Python optimization & benchmark tests
+            VLU_test02/          # neuro-plastic & symbolic trading experiments
+            VLU_test03/          # high-frequency & volatility trading models
     docs/
         strategies/
             macd-dea-crossover.md
@@ -176,6 +182,7 @@ crypto_bot_project/
             config.py             # pydantic-settings (.env)
             exceptions.py
             logger.py
+            trade_history.py      # Total profit calculation and file persistence
         db/                       # Phase 2: PostgreSQL persistence
             models.py             # TradeHistory, SystemLog, Candle
             database.py           # SQLAlchemy connection / session
@@ -210,6 +217,8 @@ crypto_bot_project/
             evolve.py
     tests/
         unit/
+            core/
+                test_trade_history.py
             trading/
             market_context/
             sentiment/

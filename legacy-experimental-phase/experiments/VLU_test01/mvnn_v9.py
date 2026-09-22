@@ -7,7 +7,7 @@
 #   pip install numpy torch
 #
 # Run:
-#   python mvnn_moons_experiment.py --scenario canonical_train
+#   python mvnn_moons_experiment.py --scenario canical_train
 #   python mvnn_moons_experiment.py --scenario aug_train
 # ------------------------------------------------------------
 
@@ -347,7 +347,7 @@ def build_template_spheres(pts_list: List[np.ndarray], m: int, rng: np.random.Ra
     sel = farthest_point_sampling(pts, m=m, rng=rng)
     centers = pts[sel]  # (M,3)
 
-    # radios = distancia al vecino más cercano entre centros
+    # radios = distancia al vecino más cerca entre centros
     D = np.linalg.norm(centers[:, None, :] - centers[None, :, :], axis=2)
     D = D + np.eye(m, dtype=np.float32) * 1e9
     nn = D.min(axis=1)
@@ -505,7 +505,7 @@ def mvnn_predict(
 # -------------------------
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--scenario", choices=["canonical_train", "aug_train"], default="canonical_train")
+    parser.add_argument("--scenario", choices=["canical_train", "aug_train"], default="canical_train")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--train_samples", type=int, default=1500)
     parser.add_argument("--test_samples", type=int, default=400)
@@ -529,7 +529,7 @@ def main():
     rng_te = np.random.RandomState(args.seed + 2)
 
     # Train scenario
-    if args.scenario == "canonical_train":
+    if args.scenario == "canical_train":
         train_rotate = False
         print("\n🧪 Scenario: TRAIN canónico (sin rotación)  → TEST rotado (stress test de invariancia)\n")
     else:
@@ -624,7 +624,7 @@ def main():
 
     print("🔧 Tips:")
     print("  - Si MVNN es lento: bajá --mvnn_candidates (p.ej. 12) y/o --mvnn_refine_steps (p.ej. 8).")
-    print("  - Si MLP cae en canonical_train: es normal (no es rot-invariant). Probá --scenario aug_train.")
+    print("  - Si MLP cae en canical_train: es normal (no es rot-invariant). Probá --scenario aug_train.")
     print("  - VNN acá es fuerte porque usa features rot-invariant (sirve para ver tu idea de esferas sin pose-search).")
     print("\n😼")
 

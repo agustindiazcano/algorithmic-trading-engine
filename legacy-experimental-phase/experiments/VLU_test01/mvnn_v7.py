@@ -141,7 +141,7 @@ for level in levels:
     min_dist = np.min(final_dists) if len(obstacles) > 0 else 999
     safe = min_dist > 0.5
     
-    print(f"   Estado: {'✅ DOMADO' if safe else '❌ CHOCÓ'}")
+    print(f"   Estado: {'✅ DODO' if safe else '❌ CHOCÓ'}")
     
     # Visualización Mini (ASCII)
     size = grid.shape[0]

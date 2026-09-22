@@ -19,7 +19,7 @@ MODERN_SPINNERS = {
 }
 
 # ==============================================================================
-# 🧠 CEREBRO DYNAMIC CAUSAL + FÍSICA DE FLUIDOS (DIAZ-CANO V1)
+# 🧠 CEREBRO DYNAMIC CAUSAL + FÍSICA DE FLUIDOS (DI-CA V1)
 # ==============================================================================
 
 class DynamicCausalBrain:
@@ -54,7 +54,7 @@ class DynamicCausalBrain:
             self.genome.append(gene)
         self.genome = np.array(self.genome)
         
-        # 2. Genoma Físico (Diaz-Cano)
+        # 2. Genoma Físico (Di-Ca)
         # K: 0.1 a 5.0 (Viscosidad)
         # Alpha: 0.1 a 0.8 (Geometría)
         # Weight: 0.0 a 5.0 (Influencia en la decisión final)
@@ -123,7 +123,7 @@ class DynamicCausalBrain:
             
         neural_output = total_activation / (total_weight_abs + 1e-9)
         
-        # --- B. CÁLCULO FÍSICO (DIAZ-CANO) ---
+        # --- B. CÁLCULO FÍSICO (DI-CA) ---
         physics_output = 0.0
         
         if full_df_window is not None and not full_df_window.empty:
@@ -131,7 +131,7 @@ class DynamicCausalBrain:
             alpha_phys = self.physics_genome[1]
             w_phys = self.physics_genome[2]
             
-            # Usamos las últimas 24 velas para la normalización (como en diaz_cano_bot.py)
+            # Usamos las últimas 24 velas para la normalización (como en di_ca_bot.py)
             window_len = len(full_df_window)
             if window_len > 25:
                 # Extraemos slice reciente
@@ -301,7 +301,7 @@ def create_header(gen, max_gens, step, best_fitness):
     
     color = "bright_cyan" if (math.sin(step * 0.2) > 0) else "cyan"
     
-    content = f"[{color}]🧬 DIAZ-CANO V1 - HYBRID EVOLUTION[/{color}]\n"
+    content = f"[{color}]🧬 DI-CA V1 - HYBRID EVOLUTION[/{color}]\n"
     content += f"{spinner} Generación {gen}/{max_gens} {bar} {progress:.1f}%\n"
     content += f"🏆 Mejor Fitness Global: ${best_fitness:.2f}"
     

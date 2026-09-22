@@ -19,7 +19,7 @@ MODERN_SPINNERS = {
 }
 
 # ==============================================================================
-# 🧠 CEREBRO VOLUMETRIC LOGIC (DIAZ-CANO V2 - VL OPTIMIZED)
+# 🧠 CEREBRO VOLUMETRIC LOGIC (DI-CA V2 - VL OPTIMIZED)
 # ==============================================================================
 
 class VolumetricLogicBrain:
@@ -262,7 +262,7 @@ def create_header(gen, max_gens, step, best_fitness):
     content += f"{spinner} Generación {gen}/{max_gens} {bar} {progress:.1f}%\n"
     content += f"🏆 Mejor Fitness Global: ${best_fitness:.2f}"
     
-    return Panel(Text.from_markup(content), title="🤖 DIAZ-CANO VL BRAIN", border_style="blue")
+    return Panel(Text.from_markup(content), title="🤖 DI-CA VL BRAIN", border_style="blue")
 
 def create_table(gen, fitness, k, alpha, weight, trades, wins, losses):
     table = Table(box=box.SIMPLE_HEAVY, expand=True, border_style="bright_black")
@@ -284,7 +284,7 @@ def create_table(gen, fitness, k, alpha, weight, trades, wins, losses):
 def run_evolution(generations=50, population_size=20): 
     console = Console()
     console.clear()
-    console.print(f" [SIM] INICIANDO SIMULACION VOLUMETRIC LOGIC (DIAZ-CANO V2 VL)", style="bold green")
+    console.print(f" [SIM] INICIANDO SIMULACION VOLUMETRIC LOGIC (DI-CA V2 VL)", style="bold green")
     
     market_prices, market_vols, market_volatilities, market_times, df_full = fetch_extended_data("PEPEUSDT", "1h", 2000)
     

@@ -173,7 +173,7 @@ def make_header():
     status_text = f"[{status_color}]● CONNECTION LIVE[/{status_color}]"
     
     # Título
-    title = Text("DIAZ-CANO SNIPER V8", style="bold cyan", justify="center")
+    title = Text("DI-CA SNIPER V8", style="bold cyan", justify="center")
     
     # Buffer Info
     buffer_txt = f"🧠 Memory: {LIVE_DATA['buffer_len']}/{MEMORY_SIZE}"

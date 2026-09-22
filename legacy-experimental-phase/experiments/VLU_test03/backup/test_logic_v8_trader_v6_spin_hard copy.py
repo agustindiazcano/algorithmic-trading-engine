@@ -5,7 +5,7 @@ import random # <--- FIXED: Agregado import random
 import requests # <--- Necesario para hablar con Binance (pip install requests)
 
 # ==============================================================================
-# 🧠 CEREBRO DYNAMIC CAUSAL (VERSIÓN 2 - MINAS ESTÁTICAS)
+# CEREBRO DYNAMIC CAUSAL (VERSIÓN 2 - MINAS ESTÁTICAS)
 # ==============================================================================
 
 class DynamicCausalBrain:

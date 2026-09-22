@@ -354,14 +354,14 @@ class VolumetricCognitiveBrain:
         best_idx = None
         min_dist = float('inf')
         
-        # Variables para buscar al "Vecino más cercano" (Soft Match)
+        # Variables para buscar al "Vecino más cerca" (Soft Match)
         nearest_neuron_idx = None
         nearest_dist = float('inf')
         
         for i, neuron in enumerate(self.neurons):
             dist = np.linalg.norm(x - neuron.c)
             
-            # Rastrear al vecino más cercano ABSOLUTO
+            # Rastrear al vecino más cerca ABSOLUTO
             if dist < nearest_dist:
                 nearest_dist = dist
                 nearest_neuron_idx = i
