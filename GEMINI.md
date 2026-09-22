@@ -114,7 +114,7 @@ No new infrastructure (Postgres, Redis, Docker, FastAPI) is introduced during th
 ## 5d. Development Phases — Phase 4 (Market Sentiment Intelligence: RAG + Decision Agents, Experimental)
 
 1. Ingestion (`sentiment/ingestion.py`): scheduled pulls from news/social/on-chain APIs per tracked symbol, stored with source and timestamp — treat this as any other external API integration under Section 4's constraints (no blocking I/O inside async code, explicit error handling, no bare `except Exception`).
-2. RAG Pipeline (`sentiment/rag_pipeline.py`): chunk and embed ingested text into a `pgvector` table on the existing Postgres instance (Phase 2); retrieve the most relevant context for a symbol on demand. Do not stand up a separate vector database service — this reuses Phase 2's infrastructure.
+2. Physics-Based RAG & Vector Search (`sentiment/rag_pipeline.py`): Designed a dynamic market-regime detector that maps multidimensional (3D) market structure into vector embeddings (`pgvector`), retrieves the physical model matched to the closest historical regime, and feeds that context to an LLM strategy-selection agent that decides which numerical strategy to deploy. Do not stand up a separate vector database service — this reuses Phase 2's infrastructure.
 3. Sentiment Scoring (`sentiment/scoring.py`): an LLM call classifies retrieved context into a bounded sentiment signal. The LLM provider must be behind a factory interface (mirroring Section 4's exchange-client abstraction), so the provider can change via configuration only.
 4. Circuit-Breaker Agent (`agents/circuit_breaker.py`) and Strategy-Selector Agent (`agents/strategy_selector.py`): see the "Advisory Agents Can Only Restrict, Never Execute" constraint in Section 4 — this is the binding rule for both. Write the test for a circuit-breaker trigger (Section 6b) before implementing the trigger condition.
 5. This phase is design/prototype status. Ship ingestion and scoring first; validate the sentiment signal's actual predictive value against historical data (using the Phase 3 backtester) before wiring the circuit-breaker into any live decision path.
@@ -162,6 +162,12 @@ To avoid import-path and `ModuleNotFoundError` issues and keep module boundaries
 
 ```
 crypto_bot_project/
+    legacy/
+    docs/
+        strategies/
+            macd-dea-crossover.md
+            bollinger-lateral.md
+        research.md
     src/
         main.py                  # Entry point (Phase 2: FastAPI + background tasks)
         api/                      # Phase 2: FastAPI routers
