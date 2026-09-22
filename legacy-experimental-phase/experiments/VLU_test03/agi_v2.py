@@ -16,7 +16,7 @@ def get_full_template(n=100):
 class CarbonIntegrityVNN:
     def __init__(self, template):
         self.template = template
-        self.r = 0.25 # Resolución Diaz-Cano [cite: 1332]
+        self.r = 0.25 # Resolución Di-Ca [cite: 1332]
 
     def check_identity(self, partial_obs):
         # Mide cuántos 'átomos' del molde encuentran apoyo en la realidad [cite: 1333-1340]
@@ -58,12 +58,12 @@ print(f"🔹 CONFIDENCIA SILICIO: {conf_s:.4f} -> {'❌ COLAPSO (Ve manchas)' if
 print(f"🔹 CONFIDENCIA CARBONO: {conf_c:.4f} -> {'✅ GESTALT (Ve el objeto completo)'}")
 print(f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 
-# --- 5. VISUALIZACIÓN DE LA 'DOMA TOTAL' ---
+# --- 5. VISUALIZACIÓN DE LA 'DO TOTAL' ---
 plt.figure(figsize=(10, 6))
 plt.scatter(template[:, 0], template[:, 1], color='blue', alpha=0.1, label="Memoria (Forma Completa)")
 plt.scatter(broken_object[:, 0], broken_object[:, 1], color='red', s=50, label="Realidad (Objeto Roto/Tapado)")
 plt.plot(template[:, 0], template[:, 1], 'g--', alpha=0.3, label="Inferencia Molecular (Relleno Mental)")
-plt.title(f"Doma de Gestalt: Objeto Ocluido\nCarbono: {conf_c:.2f} | Silicio: {conf_s:.2f}")
+plt.title(f"Do de Gestalt: Objeto Ocluido\nCarbono: {conf_c:.2f} | Silicio: {conf_s:.2f}")
 plt.legend()
 plt.grid(True, alpha=0.3)
 plt.show()

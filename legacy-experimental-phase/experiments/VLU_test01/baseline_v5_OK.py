@@ -28,7 +28,7 @@ def get_indicators(p):
 
 rsi, b_upper, b_lower = get_indicators(price)
 
-# --- 3. Doma de Silicio (MLP/Indicator Master) ---
+# --- 3. Do de Silicio (MLP/Indicator Master) ---
 # Este modelo opera si los indicadores "dicen que toca". Es carne de cañón.
 silicon_signals = np.zeros(2000)
 for i in range(1, 2000):

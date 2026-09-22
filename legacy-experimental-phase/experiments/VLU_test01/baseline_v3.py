@@ -49,12 +49,12 @@ class MolecularNeuron:
         transformed_atoms = self.transform(rotation_matrix, translation_vec)
         
         # 2. Chequeo de colisión masiva (Broad phase)
-        # Para simplificar, medimos distancia promedio al átomo más cercano (Chamfer-like)
+        # Para simplificar, medimos distancia promedio al átomo más cerca (Chamfer-like)
         # O simplemente contamos "Inliers" (puntos atrapados por alguna esfera)
         
         inliers = 0
         for point in target_cloud:
-            # Distancia al átomo transformado más cercano
+            # Distancia al átomo transformado más cerca
             dists = np.sum((transformed_atoms - point)**2, axis=1) # L2^2 eficiente
             if np.min(dists) < self.atom_radius**2:
                 inliers += 1

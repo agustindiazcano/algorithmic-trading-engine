@@ -6,7 +6,7 @@ import requests
 import pandas as pd
 
 # ==============================================================================
-# 🧠 CEREBRO DYNAMIC CAUSAL + FÍSICA DE FLUIDOS (DIAZ-CANO V2 - PHYSICS SURGERY)
+# 🧠 CEREBRO DYNAMIC CAUSAL + FÍSICA DE FLUIDOS (DI-CA V2 - PHYSICS SURGERY)
 # ==============================================================================
 
 class DynamicCausalBrain:
@@ -42,7 +42,7 @@ class DynamicCausalBrain:
             self.genome.append(gene)
         self.genome = np.array(self.genome)
         
-        # 2. Genoma Físico (Diaz-Cano) - Determinista con variación leve
+        # 2. Genoma Físico (Di-Ca) - Determinista con variación leve
         # K -> 0.2816 (Universal Viscosity)
         # Alpha -> 0.2639 (Universal Geometry)
         self.physics_genome = np.array([
@@ -146,7 +146,7 @@ class DynamicCausalBrain:
         neural_output = total_activation / (total_weight_abs + 1e-9)
         neural_output = np.tanh(neural_output)
         
-        # --- B. CÁLCULO FÍSICO GLOBAL (DCPI de Diaz-Cano) ---
+        # --- B. CÁLCULO FÍSICO GLOBAL (DCPI de Di-Ca) ---
         physics_output = 0.0
         
         if full_df_window is not None and not full_df_window.empty:
@@ -183,7 +183,7 @@ class DynamicCausalBrain:
                 physics_output = physics_signal # * w_phys (ya no multiplicamos por w_phys aquí, sino en la mezcla final?)
                 # El prompt dice: "final_signal = (neural_output * ALPHA_FINE) + (physics_output * (1 - ALPHA_FINE))"
                 # Eso le da MUCHO peso a la física (99.3%) y poco a la neuronal (0.7%).
-                # Es lo que pidió el usuario ("Doma Definitiva").
+                # Es lo que pidió el usuario ("Do Definitiva").
         
         # --- C. INTEGRACIÓN DE ESTRUCTURA FINA ---
         # Matrix Coupling
@@ -301,7 +301,7 @@ def fetch_extended_data(symbol="PEPEUSDT", interval="1h", total_candles=2000, cu
 # ==============================================================================
 
 def run_evolution(generations=50, population_size=20): 
-    print(f" [SIM] INICIANDO SIMULACION FISICA (DIAZ-CANO V2)")
+    print(f" [SIM] INICIANDO SIMULACION FISICA (DI-CA V2)")
     print(f" [POP] POBLACION: {population_size} | ESTRATEGIA: Determinista")
     
     market_prices, market_vols, market_volatilities, market_times, df_full = fetch_extended_data("PEPEUSDT", "1h", 2000)

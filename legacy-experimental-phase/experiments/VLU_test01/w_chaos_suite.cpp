@@ -164,7 +164,7 @@ void exp_2_dense_clipping() {
     float x = data[i];
     // Optimized variant: x * (1 / (1+|x|))
     // We roughly scale input so 1.0 maps to ~0.5 then mult by 2?
-    // Let's just use the canonical fast sigmoid physics saturation
+    // Let's just use the canical fast sigmoid physics saturation
     res_weyl[i] = x / (1.0f + std::abs(x) * 0.5f);
   }
   double time_weyl = t2.elapsed();

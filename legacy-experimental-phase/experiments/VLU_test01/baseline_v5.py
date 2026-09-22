@@ -94,7 +94,7 @@ class DarkMatterVNN_3D:
 vnn_logic = DarkMatterVNN_3D(prices[0], volumes[0])
 vnn_signals = vnn_logic.run(prices, volumes)
 
-# --- 4. RESULTADOS DE LA DOMA ---
+# --- 4. RESULTADOS DE LA DO ---
 def simulate_wealth(p, s, fee=0.001):
     cash, pos = 10000.0, 0.0
     hist = []
@@ -136,7 +136,7 @@ b_idx = np.where(vnn_signals == 1)[0]
 s_idx = np.where(vnn_signals == -1)[0]
 if len(b_idx)>0: ax1.scatter(b_idx, prices[b_idx], color='g', marker='^', s=100, label='Compra', zorder=5)
 if len(s_idx)>0: ax1.scatter(s_idx, prices[s_idx], color='r', marker='v', s=100, label='Venta', zorder=5)
-ax1.set_title("Doma 3D: Precio + Volumen + Volatilidad")
+ax1.set_title("Do 3D: Precio + Volumen + Volatilidad")
 ax1.legend()
 
 # Panel 2: Equity

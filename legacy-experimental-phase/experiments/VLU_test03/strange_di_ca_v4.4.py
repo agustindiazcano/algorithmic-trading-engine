@@ -114,7 +114,7 @@ def make_dashboard():
     )
     
     # HEADER
-    layout["header"].update(Panel(Align.center(Text(f"DIAZ-CANO ALGO-SIM V9 | {SYMBOL.upper()}", style="bold cyan")), border_style="blue"))
+    layout["header"].update(Panel(Align.center(Text(f"DI-CA ALGO-SIM V9 | {SYMBOL.upper()}", style="bold cyan")), border_style="blue"))
     
     # MAIN (Status en vivo)
     table = Table(box=box.MINIMAL, expand=True)

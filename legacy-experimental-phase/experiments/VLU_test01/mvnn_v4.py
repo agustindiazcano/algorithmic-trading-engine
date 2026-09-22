@@ -106,7 +106,7 @@ class AutoGyroVNN:
                 rotated_traces = rot.apply(self.traces)
                 # Distance to Curve
                 dists = cdist(sample_centered, rotated_traces, metric='euclidean')
-                # Distancia promedio de cada satélite a su riel más cercano
+                # Distancia promedio de cada satélite a su riel más cerca
                 err = np.mean(np.min(dists, axis=1))
                 if err < min_err: min_err = err
             

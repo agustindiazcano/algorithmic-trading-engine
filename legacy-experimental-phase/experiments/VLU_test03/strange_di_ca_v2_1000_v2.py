@@ -5,7 +5,7 @@ import time
 import random
 
 # ==========================================
-# 🔒 CONSTANTES DE DIAZ-CANO (MODO KAMIKAZE)
+# 🔒 CONSTANTES DE DI-CA (MODO KAMIKAZE)
 # ==========================================
 K_UNIVERSAL = 0.2816
 ALPHA_UNIVERSAL = 0.2639

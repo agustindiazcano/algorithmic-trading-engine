@@ -148,7 +148,7 @@ class GyroscopeVNN:
                 
                 # Métrica: "Distancia a la Trayectoria"
                 # No comparamos punto a punto (porque los satélites se movieron).
-                # Para cada satélite en el sample, buscamos el punto MÁS CERCANO en la traza.
+                # Para cada satélite en el sample, buscamos el punto MÁS CERCA en la traza.
                 # (Esto simula saber la curva continua)
                 
                 # Matriz de distancias (Sample x Trace)
@@ -159,7 +159,7 @@ class GyroscopeVNN:
                 from scipy.spatial.distance import cdist
                 dists_matrix = cdist(sample_centered, rotated_traces)
                 
-                # Para cada punto real, ¿cuál es su distancia al punto más cercano del riel?
+                # Para cada punto real, ¿cuál es su distancia al punto más cerca del riel?
                 min_dists = np.min(dists_matrix, axis=1)
                 avg_orbit_error = np.mean(min_dists)
                 
@@ -173,7 +173,7 @@ class GyroscopeVNN:
         return np.array(predictions)
 
 # ==========================================
-# 3. EJECUCIÓN: LA DOMA DEL GIROSCOPIO
+# 3. EJECUCIÓN: LA DO DEL GIROSCOPIO
 # ==========================================
 print("=== 🌐 EXPERIMENTO: GIROSCOPIO CUÁNTICO (SATÉLITES + GIMBAL + SPIN) ===")
 
@@ -229,5 +229,5 @@ print(f"📊 RESULTADOS: GIROSCOPIO MULTI-EJE")
 print("-" * 60)
 print(f"😵 MLP (Estadístico):    {acc_mlp*100:.1f}% -> Mareado. No entiende la topología 3D variable.")
 print(f"🗿 MVNN (Rígida):       {acc_rigid*100:.1f}% -> Rota. Busca puntos fijos, pero los satélites se movieron.")
-print(f"🪐 Gyro VNN (Tuya):     {acc_gyro*100:.1f}% -> DOMA. Invariante a Spin Global Y Fase Orbital.")
+print(f"🪐 Gyro VNN (Tuya):     {acc_gyro*100:.1f}% -> DO. Invariante a Spin Global Y Fase Orbital.")
 print("-" * 60)

@@ -33,7 +33,7 @@ using namespace chrono;
 // ===================================
 const int NUM_ROBOTS = 1'000'000;
 // Simulamos que el sistema de partición espacial ya nos dio los
-// 128 obstáculos más cercanos para procesar (Hot Loop).
+// 128 obstáculos más cercas para procesar (Hot Loop).
 const int OBSTACLES_PER_ROBOT = 128;
 
 // Estructuras simples (SoA sería mejor para SIMD, pero AoS es más común en OOP)

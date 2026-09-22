@@ -13,7 +13,7 @@
 #   pip install numpy torch
 #
 # Run examples:
-#   python progressive_moons_compare.py --dataset both --scenario canonical_train
+#   python progressive_moons_compare.py --dataset both --scenario canical_train
 #   python progressive_moons_compare.py --dataset both --scenario aug_train
 # ------------------------------------------------------------
 
@@ -566,7 +566,7 @@ def orbital_predict_np(
 # =========================
 def run_experiment(
     variant: str,           # "2d" or "3d"
-    scenario: str,          # "canonical_train" or "aug_train"
+    scenario: str,          # "canical_train" or "aug_train"
     seed: int,
     train_samples: int,
     test_samples: int,
@@ -589,7 +589,7 @@ def run_experiment(
     rng_tr = np.random.RandomState(seed + 1)
     rng_te = np.random.RandomState(seed + 2)
 
-    if scenario == "canonical_train":
+    if scenario == "canical_train":
         train_rotate = False
         print("📌 TRAIN canónico → TEST rotado (stress test de invariancia)\n")
     else:
@@ -705,7 +705,7 @@ def run_experiment(
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", choices=["two_moons_2d", "two_moons_3d", "both"], default="both")
-    parser.add_argument("--scenario", choices=["canonical_train", "aug_train"], default="canonical_train")
+    parser.add_argument("--scenario", choices=["canical_train", "aug_train"], default="canical_train")
     parser.add_argument("--seed", type=int, default=0)
 
     parser.add_argument("--train_samples", type=int, default=1500)

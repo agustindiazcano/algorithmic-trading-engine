@@ -35,7 +35,7 @@ class MolecularNeuron2D:
         # Inferencia Volumétrica (Promedio de intersecciones) [cite: 339, 2071]
         score = 0
         for p_obs in x:
-            # Distancia al átomo más cercano del molde
+            # Distancia al átomo más cerca del molde
             dists = np.linalg.norm(expected_pos - p_obs, axis=1)
             min_dist = np.min(dists)
             # Función de proximidad radial [cite: 340, 2072]

@@ -70,7 +70,7 @@ class CarbonVNN:
             # Cálculo de Volatilidad Local (Inhalación/Exhalación)
             local_vol = np.std(data[max(0, i-15):i+1])
             # La neurona RESPIRA: el radio crece con la incertidumbre
-            # Factor de "Doma": 3 sigmas de seguridad
+            # Factor de "Do": 3 sigmas de seguridad
             self.r = 0.9 * self.r + 0.1 * (local_vol * 3.0) 
             
             # Lógica de Membrana: Solo opera si la fuerza rompe la geometría
@@ -97,16 +97,16 @@ ax1.plot(prices, color='black', alpha=0.4, label="Mercado (Ruido + Trampas)")
 ax1.set_title("Escenario de Mercado 'Hijo de Puta' (Volatilidad Extrema)")
 ax1.legend()
 
-# Gráfico de Patrimonio (Doma)
+# Gráfico de Patrimonio (Do)
 ax2.plot(mlp_history, color='red', label=f"Silicio (MLP/MA): ${mlp_history[-1]:.0f} ({mlp_trades} trades)")
 ax2.plot(vnn_history, color='green', linewidth=3, label=f"Carbono (VNN): ${vnn_history[-1]:.0f} ({vnn_trades} trades)")
 ax2.fill_between(range(1500), 10000, vnn_history, color='green', alpha=0.1)
 
-ax2.set_title("Patrimonio Neto: La Doma de la Volatilidad")
+ax2.set_title("Patrimonio Neto: La Do de la Volatilidad")
 ax2.set_ylabel("USD")
 ax2.legend()
 plt.tight_layout()
-plt.savefig("doma_volatil_final.png")
+plt.savefig("do_volatil_final.png")
 
 print(f"RESULTADO FINAL:")
 print(f"MLP (Silicio): Final ${mlp_history[-1]:.2f} | Trades: {mlp_trades}")

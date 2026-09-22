@@ -198,7 +198,7 @@ class DCNNAgent:
             
             repulsion = np.zeros_like(path)
             if len(obstacles) > 0:
-                # Optimización: Solo mirar obstáculos cercanos (KD-Tree sería ideal, cdist es bruto pero va)
+                # Optimización: Solo mirar obstáculos cercas (KD-Tree sería ideal, cdist es bruto pero va)
                 # Para mapa 100x100 cdist es pesado, filtramos por distancia simple primero si fuera prod.
                 # Aquí usamos cdist full power.
                 dists = cdist(path, obstacles)
@@ -239,7 +239,7 @@ dcnn_agent = DCNNAgent() # No necesita entreno
 map_sizes = [15, 30, 40, 50, 100]
 
 print("\n[FASE 2] Testeando Generalización...")
-print(f"{'MAPA':<10} | {'MLP (Deep Learning)':<20} | {'DCNN (Diaz-Cano)':<20}")
+print(f"{'MAPA':<10} | {'MLP (Deep Learning)':<20} | {'DCNN (Di-Ca)':<20}")
 print("-" * 60)
 
 for size in map_sizes:
@@ -260,7 +260,7 @@ for size in map_sizes:
     # Test DCNN
     # La DCNN escala sus neuronas internamente
     _, dcnn_success = dcnn_agent.solve(obs_xy, start, end, size)
-    dcnn_res = "✅ ÉXITO (DOMA)" if dcnn_success else "❌ FALLO"
+    dcnn_res = "✅ ÉXITO (DO)" if dcnn_success else "❌ FALLO"
     
     print(f"{size}x{size:<6} | {mlp_res:<20} | {dcnn_res:<20}")
 

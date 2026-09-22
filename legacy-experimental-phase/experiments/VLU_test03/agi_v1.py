@@ -7,7 +7,7 @@ from sklearn.datasets import make_moons
 
 import numpy as np
 
-class DiazCanoInertiaNeuron:
+class DiCaInertiaNeuron:
     """
     Motor de Inferencia de Carbono Computacional v4.1.
     """
@@ -57,7 +57,7 @@ class DiazCanoInertiaNeuron:
 
     def can_mitose(self):
         """
-        Regla de Oro de Diaz-Cano: No hay división bajo el límite de Planck[cite: 55, 345].
+        Regla de Oro de Di-Ca: No hay división bajo el límite de Planck[cite: 55, 345].
         """
         # Solo se divide si el dolor es alto y el radio permite mayor resolución
         return self.pain_accum > 5 and self.r > (self.R_PLANCK * 2)
@@ -69,7 +69,7 @@ class DiazCanoInertiaNeuron:
         for _ in range(2):
             # Desfase estocástico para exploración de fase [cite: 57, 347]
             jitter = np.random.normal(0, 0.05, self.c.shape)
-            child = DiazCanoInertiaNeuron(self.c + jitter, new_radius)
+            child = DiCaInertiaNeuron(self.c + jitter, new_radius)
             child.votes = self.votes.copy()
             daughters.append(child)
         return daughters
@@ -86,7 +86,7 @@ class SilicioMLP(nn.Module):
 
     def forward(self, x): return self.net(x)
 
-# --- 2. EL RETADOR: Cerebro de Carbono (Mundo de Diaz-Cano) ---
+# --- 2. EL RETADOR: Cerebro de Carbono (Mundo de Di-Ca) ---
 class VolumetricBrainCarbono:
     def __init__(self):
         self.neurons = []
@@ -106,7 +106,7 @@ class VolumetricBrainCarbono:
         
         if not active:
             # Creación de neurona (Nivel 1: Atómica) [cite: 1977]
-            new_n = DiazCanoInertiaNeuron(x, radius=0.35)
+            new_n = DiCaInertiaNeuron(x, radius=0.35)
             self.neurons.append(new_n)
             active = new_n
 
@@ -114,7 +114,7 @@ class VolumetricBrainCarbono:
         pred = self.predict(x)
         active.update_physics(x, y, abs(y - pred))
 
-        # 3. Mitosis de Diaz-Cano (Respeta límite R=0.25)
+        # 3. Mitosis de Di-Ca (Respeta límite R=0.25)
         if active.can_mitose():
             daughters = active.mitosis()
             self.neurons.extend(daughters)
@@ -138,7 +138,7 @@ X = X.astype(np.float32)
 # A. Entrenar Silicio (MLP)
 mlp = SilicioMLP()
 optimizer = optim.Adam(mlp.parameters(), lr=0.01)
-# B. Entrenar Carbono (VNN Diaz-Cano)
+# B. Entrenar Carbono (VNN Di-Ca)
 brain = VolumetricBrainCarbono()
 print(">>> Entrenando Carbono (VNN)...")
 
@@ -174,7 +174,7 @@ end_vnn_train = time.time()
 params_mlp = sum(p.numel() for p in mlp.parameters()) 
 masa_carbono = len(brain.neurons) 
 
-print(f"\n📊 DIAGNÓSTICO DE EFICIENCIA DIAZ-CANO:")
+print(f"\n📊 DIAGNÓSTICO DE EFICIENCIA DI-CA:")
 print(f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 print(f"🔹 SILICIO (MLP):")
 print(f"   - Masa (Parámetros): {params_mlp}")

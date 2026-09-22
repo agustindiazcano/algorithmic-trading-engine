@@ -127,7 +127,7 @@ def render_dashboard():
     )
 
     # Header
-    layout["top"].update(Panel(Align.center(Text(f"DIAZ-CANO SIMULATOR V11 | {SYMBOL.upper()}", style="bold magenta")), border_style="bright_black"))
+    layout["top"].update(Panel(Align.center(Text(f"DI-CA SIMULATOR V11 | {SYMBOL.upper()}", style="bold magenta")), border_style="bright_black"))
 
     # Monitor de Física
     table = Table(box=box.SIMPLE, expand=True)

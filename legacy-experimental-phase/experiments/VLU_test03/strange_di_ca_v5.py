@@ -7,7 +7,7 @@ import time
 from collections import deque
 
 # ==========================================
-# 🔒 CONSTANTES DEL SISTEMA DIAZ-CANO
+# 🔒 CONSTANTES DEL SISTEMA DI-CA
 # ==========================================
 SYMBOL = "pepeusdt"  # Minúsculas para el stream
 K_UNIVERSAL = 0.2816
@@ -61,7 +61,7 @@ def calculate_metrics(df_live):
     
     current_flow = df_live['flow'].iloc[-1]
     
-    # DCPI: Índice de Presión de Diaz-Cano
+    # DCPI: Índice de Presión de Di-Ca
     dcpi = (current_flow / (flow_avg + 1e-9)) / K_UNIVERSAL
     
     # 2. Umbral Dinámico (Contexto de 1000 velas)

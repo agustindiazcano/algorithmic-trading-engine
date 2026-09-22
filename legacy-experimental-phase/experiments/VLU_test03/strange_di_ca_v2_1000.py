@@ -4,7 +4,7 @@ import requests
 import time
 import random
 
-# 🔒 CONSTANTES DE DIAZ-CANO (Ajustadas para Supervivencia)
+# 🔒 CONSTANTES DE DI-CA (Ajustadas para Supervivencia)
 K_UNIVERSAL = 0.2816
 ALPHA_UNIVERSAL = 0.2639
 DF_MIN = 1.40

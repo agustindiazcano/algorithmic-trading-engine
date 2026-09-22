@@ -132,7 +132,7 @@ class MolecularVNN:
 # 3. EJECUCIÓN DEL EXPERIMENTO
 # ==========================================
 
-print("=== 🧪 EXPERIMENTO: LA DOMA DE LA ROTACIÓN ===")
+print("=== 🧪 EXPERIMENTO: LA DO DE LA ROTACIÓN ===")
 N_SAMPLES = 100
 POINTS_PER_OBJ = 50
 
@@ -194,5 +194,5 @@ print(f"📊 RESULTADOS FINALES (Accuracy en objetos rotados)")
 print("-" * 40)
 print(f"❌ MLP (Estadístico):     {acc_mlp*100:.1f}%  -> Fallo catastrófico (memorizó pixeles).")
 print(f"⚠️ VNN (Esferas Fijas):   {acc_vnn*100:.1f}%  -> Regular (las esferas no giran).")
-print(f"🏆 MVNN (Molecular):      {acc_mvnn*100:.1f}%  -> DOMA TOTAL (Entendió la estructura).")
+print(f"🏆 MVNN (Molecular):      {acc_mvnn*100:.1f}%  -> DO TOTAL (Entendió la estructura).")
 print("-" * 40)

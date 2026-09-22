@@ -14,7 +14,7 @@ if sys.platform.startswith('win'):
 TRADING_MODE = "LONG"  # Opciones: "LONG", "SHORT", "BOTH"
 
 # ==============================================================================
-# 🧬 NEURONA VOLUMÉTRICA 3D CON CUATERNIONES (S³)
+#  NEURONA VOLUMÉTRICA 3D CON CUATERNIONES (S³)
 # ==============================================================================
 
 class QuaternionNeuron3D:

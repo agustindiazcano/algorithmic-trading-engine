@@ -114,7 +114,7 @@ def render_ui():
 
     panel = Panel(
         table,
-        title=f"[bold cyan]DÍAZ-CANO LIVE PERCENTILES: {SYMBOL.upper()}[/]",
+        title=f"[bold cyan]DÍAZ-CA LIVE PERCENTILES: {SYMBOL.upper()}[/]",
         subtitle=f"[bold white]PRECIO: {LIVE_METRICS['price']:.8f} USDT[/]"
     )
     return panel
