@@ -1,0 +1,21 @@
+[project]
+name = "crypto-quant-trading-platform"
+version = "0.1.0"
+description = "An asynchronous, fault-tolerant algorithmic trading platform for Binance"
+requires-python = ">=3.11"
+dependencies = [
+    "websocket-client",
+    "python-binance",
+    "pandas",
+    "python-telegram-bot",
+    "python-dotenv"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
