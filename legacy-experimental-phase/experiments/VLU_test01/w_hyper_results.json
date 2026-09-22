@@ -1,0 +1,9 @@
+{
+  "test_type": "Hyper-Dimensional Search (128D)",
+  "vectors": 100000,
+  "dimensions": 128,
+  "avg_traditional_early_exit_us": 35293.4,
+  "avg_w_simd_us": 23103.9,
+  "improvement_percent": 34.5376,
+  "speedup_factor": 1.52759
+}

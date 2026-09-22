@@ -1,0 +1,14 @@
+{
+  "anchor_inertia": 0.9694007195009616,
+  "anchor_radius_base": 0.0651241818097633,
+  "anchor_persistence": 14,
+  "hunter_inertia": 0.9018010431376098,
+  "hunter_radius_base": 0.03842558732957034,
+  "hunter_persistence": 2,
+  "hunter_volume_threshold": -0.009901148935917703,
+  "trauma_sensitivity": 0.42914949195832186,
+  "trauma_radius_multiplier": 1.6123437630029755,
+  "pressure_threshold": 0.9273924242569607,
+  "radius_learning_rate": 0.08699780156950197,
+  "fitness": 0.0
+}

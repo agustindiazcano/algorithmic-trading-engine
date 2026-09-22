@@ -1,0 +1,8 @@
+{
+  "test_type": "Multi-Paradigm Stress Test (Pathfinding/Fuzzy/Volumetric)",
+  "avg_time_astar_us": 42190.2,
+  "avg_time_fuzzy_us": 41.7584,
+  "avg_time_w_us": 23.9878,
+  "speedup_vs_astar": 1758.82,
+  "speedup_vs_fuzzy": 1.74082
+}

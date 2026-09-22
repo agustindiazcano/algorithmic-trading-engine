@@ -1,0 +1,9 @@
+{
+  "test_type": "God Swarm (100k Agents vs 10M Obstacles)",
+  "agents": 100000,
+  "obstacles": 10000000,
+  "avg_time_astar_est_ms": 18000,
+  "avg_time_w_ms": 29.7531,
+  "fps_w": 33.61,
+  "speedup_factor": 604.979
+}

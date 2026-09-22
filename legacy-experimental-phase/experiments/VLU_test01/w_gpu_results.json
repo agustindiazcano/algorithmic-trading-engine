@@ -1,0 +1,9 @@
+{
+  "test_type": "GPU Warp Divergence Simulation",
+  "duration_sec": 60,
+  "frames_simulated": 2147,
+  "avg_cycles_traditional": 1.79622e+06,
+  "avg_cycles_w": 593750,
+  "divergence_penalty_factor": 3.02522,
+  "improvement_percent": 66.9446
+}

@@ -134,7 +134,7 @@ Goal: make the current system correct and safe in simulation mode before touchin
 Goal: give the bot a signal that plain price/volume indicators cannot see -- news, social sentiment, and on-chain events -- and let an agent act on it, without letting that agent bypass the existing risk layer.
 
 - Sentiment ingestion: scheduled API calls to news/social/on-chain sources per tracked symbol, stored as raw text with a timestamp and source.
-- RAG pipeline: chunk and embed ingested text into the shared `pgvector` store (same Postgres instance as Phase 2, a new table rather than a new database), then retrieve the most relevant context for a symbol when a decision is needed.
+- Physics-Based RAG & Vector Search: Designed a dynamic market-regime detector that maps multidimensional (3D) market structure into vector embeddings (pgvector), retrieves the physical model matched to the closest historical regime, and feeds that context to an LLM strategy-selection agent that decides which numerical strategy to deploy.
 - Sentiment scoring: an LLM call classifies the retrieved context into a sentiment signal (e.g. bullish/neutral/bearish, or a bounded numeric score) for the symbol under evaluation.
 - Circuit-breaker agent: monitors sentiment and news-event signals and can veto new entries or force-close existing positions on a symbol -- for example, on a detected exchange hack, a regulatory action, a stablecoin depeg, or a sharp sentiment-price divergence. This agent can only ever make trading *more* conservative (block or close), never open a position or override the risk layer's caps; every halt decision is logged with its trigger and reasoning, the same way a rejected order is logged today.
 - Strategy decision agent: given the current regime (Phase 3), the indicator scores (existing `strategy.py`), and the sentiment signal (this phase), chooses which strategy component should be active (e.g. MACD-trend vs. Bollinger-range vs. sitting out) instead of that choice being hardcoded. Its output is a strategy selection, not an order -- it still goes through the normal entry/exit and risk logic.
@@ -181,6 +181,23 @@ Goal: replace hand-tuned strategy parameters (the currently arbitrary `min_score
 
 ---
 
+## Strategy Documentation and Research
+
+The trading rules summarized above are the ones currently active. Detailed
+write-ups of each strategy component -- including the physical mechanism
+each formula is meant to capture, its valid regime, and known failure modes
+-- live in `docs/strategies/`.
+
+This project also builds on a series of earlier prototypes (rule-based
+physics-inspired models, and an unfinished 3D shape-recognition neural
+network blocked by local compute) kept in `legacy/` with their own
+post-mortem in `docs/research.md`. They did not reach production, but each
+one narrowed down what does and doesn't hold up when the market's regime
+shifts -- see that log for the reasoning behind design choices in this
+README's Phase 3 and Phase 4 sections.
+
+---
+
 ## Target folder structure
 
 ```
@@ -190,6 +207,13 @@ crypto_bot_project/
 ├── Dockerfile
 ├── .env.example
 ├── README.md
+│
+├── legacy/                 # early prototypes and original scripts
+├── docs/
+│   ├── strategies/         # one doc per model/strategy
+│   │   ├── macd-dea-crossover.md
+│   │   └── bollinger-lateral.md
+│   └── research.md         # log of prototypes: what worked, what failed, why
 │
 ├── src/
 │   ├── main.py                     # Entry point (FastAPI + background tasks)

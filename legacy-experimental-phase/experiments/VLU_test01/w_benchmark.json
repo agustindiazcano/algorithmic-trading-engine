@@ -1,0 +1,8 @@
+{
+  "test_duration_sec": 60,
+  "samples": 359,
+  "avg_branching_us": 158080,
+  "avg_branchless_us": 9275.32,
+  "improvement_percent": 94.1325,
+  "speedup_factor": 17.0431
+}

@@ -1,0 +1,10 @@
+{
+  "test_type": "Neural Attention Mechanism (Transformer)",
+  "context_window": 4096,
+  "embedding_dim": 128,
+  "avg_latency_softmax_ms": 3802.65,
+  "avg_latency_w_ms": 3759.51,
+  "tokens_per_sec_softmax": 1092.27,
+  "tokens_per_sec_w": 1092.27,
+  "speedup_factor": 1.01148
+}

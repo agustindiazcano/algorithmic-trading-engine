@@ -1,0 +1,14 @@
+{
+  "radius_base": 0.011959294055871136,
+  "volatility_multiplier": 1.4735028444422087,
+  "inertia_up": 0.9404823775732704,
+  "inertia_down": 0.8081495531389143,
+  "volume_exhaustion_threshold": 0.6,
+  "take_profit_tolerance": 0.006274941286624829,
+  "stop_loss_pct": 0.009813364061591893,
+  "trailing_stop_trigger": 0.0069175421924607275,
+  "trailing_stop_floor": 0.0022197065628873293,
+  "rsi_overbought_threshold": 68.28443353311451,
+  "volume_spike_multiplier": 3.467320037297452,
+  "fitness": -0.20506696730151486
+}

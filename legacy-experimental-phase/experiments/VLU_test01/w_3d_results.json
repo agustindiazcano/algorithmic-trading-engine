@@ -1,0 +1,8 @@
+{
+ "test": "Deep Space 3D",
+ "results": {
+  "w": { "ms": 2313, "score": 4 },
+  "ants": { "ms": 2778, "score": 2627 },
+  "fuzzy": { "ms": 40238, "score": 1196 },
+  "bees": { "ms": 2298, "score": 2182 }
+ }}

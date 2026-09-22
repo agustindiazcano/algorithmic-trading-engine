@@ -1,0 +1,8 @@
+{
+  "test_name": "W Vengeance Benchmark (Branch Misprediction)",
+  "particle_count": 1000000,
+  "radius_check": 25,
+  "traditional_ms": 779.561,
+  "w_ms": 163.019,
+  "speedup_factor": 4.78203
+}
