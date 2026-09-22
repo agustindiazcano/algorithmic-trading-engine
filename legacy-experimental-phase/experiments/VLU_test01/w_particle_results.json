@@ -1,0 +1,9 @@
+{
+  "test_name": "W Particle Benchmark 3D",
+  "particle_count": 1000000,
+  "source_count": 50,
+  "traditional_ms": 101.14,
+  "w_ms": 125.593,
+  "speedup_factor": 0.8053,
+  "description": "Branchless logic vs Conditional Sqrt logic"
+}

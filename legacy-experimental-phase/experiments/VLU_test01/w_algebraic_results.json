@@ -1,0 +1,45 @@
+{
+  "experiment": "Algebraic (W) vs Boolean (Traditional)",
+  "results": [
+    {
+      "test": "Binary Classification",
+      "time_traditional_s": 0.018959,
+      "time_w_s": 0.263157,
+      "speedup": 0.0720444,
+      "score_traditional": 2.50053e+07,
+      "score_w": 2.50052e+07
+    },
+    {
+      "test": "Clipping",
+      "time_traditional_s": 0.145928,
+      "time_w_s": 0.598895,
+      "speedup": 0.243662,
+      "score_traditional": 0,
+      "score_w": 0
+    },
+    {
+      "test": "ReLU Activation",
+      "time_traditional_s": 0.031356,
+      "time_w_s": 0.245148,
+      "speedup": 0.127906,
+      "score_traditional": 0,
+      "score_w": 0
+    },
+    {
+      "test": "Decision Chains",
+      "time_traditional_s": 0.079349,
+      "time_w_s": 0.567672,
+      "speedup": 0.13978,
+      "score_traditional": 4.54968e+07,
+      "score_w": 4.54969e+07
+    },
+    {
+      "test": "Collision Detection",
+      "time_traditional_s": 0.012674,
+      "time_w_s": 2.92257,
+      "speedup": 0.00433659,
+      "score_traditional": 7934,
+      "score_w": 7930.63
+    }
+  ]
+}

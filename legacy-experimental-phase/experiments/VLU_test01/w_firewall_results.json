@@ -1,0 +1,10 @@
+{
+  "test_type": "Network Packet Filtering (Firewall)",
+  "packets_per_batch": 10000000,
+  "active_rules": 16,
+  "avg_traditional_latency_us": 691249,
+  "avg_w_latency_us": 161647,
+  "throughput_traditional_mpps": 14.4666,
+  "throughput_w_mpps": 61.8633,
+  "speedup_factor": 4.27629
+}

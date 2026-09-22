@@ -1,0 +1,23 @@
+{
+  "period": {
+    "start": "2026-01-02",
+    "end": "2026-01-31",
+    "days": 30
+  },
+  "performance": {
+    "initial_equity": 10000,
+    "final_equity": 10000.0,
+    "profit": 0.0,
+    "return_pct": 0.0,
+    "fitness": -100.0
+  },
+  "trades": {
+    "total": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0,
+    "avg_hold_days": 0,
+    "avg_profit_pct": 0
+  },
+  "trade_details": []
+}

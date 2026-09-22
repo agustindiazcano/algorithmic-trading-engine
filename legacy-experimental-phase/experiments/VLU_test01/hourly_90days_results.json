@@ -1,0 +1,24 @@
+{
+  "period": {
+    "start": "2026-01-26",
+    "end": "2026-02-01",
+    "hours": 2160,
+    "days": 90.0
+  },
+  "performance": {
+    "initial_equity": 10000,
+    "final_equity": 11880.94256475796,
+    "profit": 1880.9425647579592,
+    "return_pct": 18.80942564757959,
+    "fitness": 18.80942564757959
+  },
+  "trades": {
+    "total": 5,
+    "wins": 5,
+    "losses": 0,
+    "win_rate": 100.0,
+    "avg_hold_hours": 6.8,
+    "avg_profit_pct": 3.7584281262895436,
+    "profit_factor": Infinity
+  }
+}

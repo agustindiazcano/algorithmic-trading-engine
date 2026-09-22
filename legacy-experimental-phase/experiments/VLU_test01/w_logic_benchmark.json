@@ -1,0 +1,2585 @@
+{
+    "metadata": {
+        "protocol": "W Logic Throughput Benchmark",
+        "system_type": "CPU Branch Prediction Stress Test",
+        "dataset_size_per_frame": 200000,
+        "duration_seconds": 60
+    },
+    "summary": {
+        "avg_throughput_binary": "6.17 Mops/s",
+        "avg_throughput_w": "1.56 Mops/s",
+        "performance_delta": "-74.75%",
+        "conclusion": "Arithmetic Branchless Logic exhibits superior stability and throughput."
+    },
+    "data_stream": [
+        {
+            "timestamp": 0.01,
+            "binary_ms": 34.583,
+            "w_ms": 190.063,
+            "binary_mops": 5.78,
+            "w_mops": 1.05
+        },
+        {
+            "timestamp": 0.24,
+            "binary_ms": 37.067,
+            "w_ms": 143.5,
+            "binary_mops": 5.4,
+            "w_mops": 1.39
+        },
+        {
+            "timestamp": 0.42,
+            "binary_ms": 33.856,
+            "w_ms": 152.622,
+            "binary_mops": 5.91,
+            "w_mops": 1.31
+        },
+        {
+            "timestamp": 0.61,
+            "binary_ms": 39.901,
+            "w_ms": 142.149,
+            "binary_mops": 5.01,
+            "w_mops": 1.41
+        },
+        {
+            "timestamp": 0.8,
+            "binary_ms": 34.999,
+            "w_ms": 138.86,
+            "binary_mops": 5.71,
+            "w_mops": 1.44
+        },
+        {
+            "timestamp": 0.97,
+            "binary_ms": 35.204,
+            "w_ms": 130.965,
+            "binary_mops": 5.68,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 1.14,
+            "binary_ms": 33.107,
+            "w_ms": 142.924,
+            "binary_mops": 6.04,
+            "w_mops": 1.4
+        },
+        {
+            "timestamp": 1.31,
+            "binary_ms": 33.458,
+            "w_ms": 130.074,
+            "binary_mops": 5.98,
+            "w_mops": 1.54
+        },
+        {
+            "timestamp": 1.48,
+            "binary_ms": 33.599,
+            "w_ms": 139.481,
+            "binary_mops": 5.95,
+            "w_mops": 1.43
+        },
+        {
+            "timestamp": 1.66,
+            "binary_ms": 32.115,
+            "w_ms": 135.35,
+            "binary_mops": 6.23,
+            "w_mops": 1.48
+        },
+        {
+            "timestamp": 1.82,
+            "binary_ms": 32.632,
+            "w_ms": 122.182,
+            "binary_mops": 6.13,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 1.98,
+            "binary_ms": 31.675,
+            "w_ms": 130.679,
+            "binary_mops": 6.31,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 2.14,
+            "binary_ms": 33.588,
+            "w_ms": 125.925,
+            "binary_mops": 5.95,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 2.3,
+            "binary_ms": 31.256,
+            "w_ms": 138.7,
+            "binary_mops": 6.4,
+            "w_mops": 1.44
+        },
+        {
+            "timestamp": 2.47,
+            "binary_ms": 31.191,
+            "w_ms": 120.84,
+            "binary_mops": 6.41,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 2.63,
+            "binary_ms": 30.432,
+            "w_ms": 125.784,
+            "binary_mops": 6.57,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 2.79,
+            "binary_ms": 40.846,
+            "w_ms": 123.236,
+            "binary_mops": 4.9,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 2.95,
+            "binary_ms": 32.381,
+            "w_ms": 128.796,
+            "binary_mops": 6.18,
+            "w_mops": 1.55
+        },
+        {
+            "timestamp": 3.11,
+            "binary_ms": 41.664,
+            "w_ms": 130.894,
+            "binary_mops": 4.8,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 3.29,
+            "binary_ms": 32.92,
+            "w_ms": 150.392,
+            "binary_mops": 6.08,
+            "w_mops": 1.33
+        },
+        {
+            "timestamp": 3.47,
+            "binary_ms": 35.345,
+            "w_ms": 132.45,
+            "binary_mops": 5.66,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 3.64,
+            "binary_ms": 34.583,
+            "w_ms": 155.8,
+            "binary_mops": 5.78,
+            "w_mops": 1.28
+        },
+        {
+            "timestamp": 3.83,
+            "binary_ms": 53.69,
+            "w_ms": 126.183,
+            "binary_mops": 3.73,
+            "w_mops": 1.58
+        },
+        {
+            "timestamp": 4.01,
+            "binary_ms": 31.23,
+            "w_ms": 119.043,
+            "binary_mops": 6.4,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 4.16,
+            "binary_ms": 29.267,
+            "w_ms": 121.424,
+            "binary_mops": 6.83,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 4.32,
+            "binary_ms": 30.39,
+            "w_ms": 122.485,
+            "binary_mops": 6.58,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 4.47,
+            "binary_ms": 29.238,
+            "w_ms": 121.078,
+            "binary_mops": 6.84,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 4.62,
+            "binary_ms": 29.942,
+            "w_ms": 129.616,
+            "binary_mops": 6.68,
+            "w_mops": 1.54
+        },
+        {
+            "timestamp": 4.78,
+            "binary_ms": 56.95,
+            "w_ms": 180.579,
+            "binary_mops": 3.51,
+            "w_mops": 1.11
+        },
+        {
+            "timestamp": 5.02,
+            "binary_ms": 39.595,
+            "w_ms": 136.994,
+            "binary_mops": 5.05,
+            "w_mops": 1.46
+        },
+        {
+            "timestamp": 5.2,
+            "binary_ms": 29.724,
+            "w_ms": 162.41,
+            "binary_mops": 6.73,
+            "w_mops": 1.23
+        },
+        {
+            "timestamp": 5.39,
+            "binary_ms": 29.581,
+            "w_ms": 143.568,
+            "binary_mops": 6.76,
+            "w_mops": 1.39
+        },
+        {
+            "timestamp": 5.57,
+            "binary_ms": 56.655,
+            "w_ms": 158.792,
+            "binary_mops": 3.53,
+            "w_mops": 1.26
+        },
+        {
+            "timestamp": 5.78,
+            "binary_ms": 30.668,
+            "w_ms": 134.787,
+            "binary_mops": 6.52,
+            "w_mops": 1.48
+        },
+        {
+            "timestamp": 5.95,
+            "binary_ms": 33.057,
+            "w_ms": 139.743,
+            "binary_mops": 6.05,
+            "w_mops": 1.43
+        },
+        {
+            "timestamp": 6.12,
+            "binary_ms": 31.751,
+            "w_ms": 133.636,
+            "binary_mops": 6.3,
+            "w_mops": 1.5
+        },
+        {
+            "timestamp": 6.29,
+            "binary_ms": 31.289,
+            "w_ms": 131.033,
+            "binary_mops": 6.39,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 6.45,
+            "binary_ms": 33.361,
+            "w_ms": 135.263,
+            "binary_mops": 5.99,
+            "w_mops": 1.48
+        },
+        {
+            "timestamp": 6.62,
+            "binary_ms": 33.312,
+            "w_ms": 131.084,
+            "binary_mops": 6.0,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 6.79,
+            "binary_ms": 32.248,
+            "w_ms": 121.945,
+            "binary_mops": 6.2,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 6.95,
+            "binary_ms": 31.322,
+            "w_ms": 122.895,
+            "binary_mops": 6.39,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 7.1,
+            "binary_ms": 32.553,
+            "w_ms": 136.694,
+            "binary_mops": 6.14,
+            "w_mops": 1.46
+        },
+        {
+            "timestamp": 7.27,
+            "binary_ms": 36.08,
+            "w_ms": 134.246,
+            "binary_mops": 5.54,
+            "w_mops": 1.49
+        },
+        {
+            "timestamp": 7.44,
+            "binary_ms": 35.093,
+            "w_ms": 144.921,
+            "binary_mops": 5.7,
+            "w_mops": 1.38
+        },
+        {
+            "timestamp": 7.63,
+            "binary_ms": 36.267,
+            "w_ms": 133.824,
+            "binary_mops": 5.51,
+            "w_mops": 1.49
+        },
+        {
+            "timestamp": 7.8,
+            "binary_ms": 33.87,
+            "w_ms": 134.405,
+            "binary_mops": 5.9,
+            "w_mops": 1.49
+        },
+        {
+            "timestamp": 7.97,
+            "binary_ms": 35.527,
+            "w_ms": 128.591,
+            "binary_mops": 5.63,
+            "w_mops": 1.56
+        },
+        {
+            "timestamp": 8.13,
+            "binary_ms": 33.011,
+            "w_ms": 122.935,
+            "binary_mops": 6.06,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 8.29,
+            "binary_ms": 31.247,
+            "w_ms": 127.717,
+            "binary_mops": 6.4,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 8.45,
+            "binary_ms": 31.999,
+            "w_ms": 125.877,
+            "binary_mops": 6.25,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 8.61,
+            "binary_ms": 32.67,
+            "w_ms": 162.924,
+            "binary_mops": 6.12,
+            "w_mops": 1.23
+        },
+        {
+            "timestamp": 8.8,
+            "binary_ms": 33.458,
+            "w_ms": 134.196,
+            "binary_mops": 5.98,
+            "w_mops": 1.49
+        },
+        {
+            "timestamp": 8.97,
+            "binary_ms": 41.566,
+            "w_ms": 142.604,
+            "binary_mops": 4.81,
+            "w_mops": 1.4
+        },
+        {
+            "timestamp": 9.16,
+            "binary_ms": 33.989,
+            "w_ms": 125.714,
+            "binary_mops": 5.88,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 9.32,
+            "binary_ms": 32.037,
+            "w_ms": 122.063,
+            "binary_mops": 6.24,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 9.48,
+            "binary_ms": 33.102,
+            "w_ms": 124.862,
+            "binary_mops": 6.04,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 9.63,
+            "binary_ms": 31.279,
+            "w_ms": 140.012,
+            "binary_mops": 6.39,
+            "w_mops": 1.43
+        },
+        {
+            "timestamp": 9.81,
+            "binary_ms": 33.239,
+            "w_ms": 133.567,
+            "binary_mops": 6.02,
+            "w_mops": 1.5
+        },
+        {
+            "timestamp": 9.97,
+            "binary_ms": 32.841,
+            "w_ms": 123.237,
+            "binary_mops": 6.09,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 10.13,
+            "binary_ms": 31.87,
+            "w_ms": 126.124,
+            "binary_mops": 6.28,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 10.29,
+            "binary_ms": 32.696,
+            "w_ms": 124.673,
+            "binary_mops": 6.12,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 10.45,
+            "binary_ms": 31.695,
+            "w_ms": 127.004,
+            "binary_mops": 6.31,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 10.61,
+            "binary_ms": 31.857,
+            "w_ms": 121.73,
+            "binary_mops": 6.28,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 10.76,
+            "binary_ms": 29.779,
+            "w_ms": 122.128,
+            "binary_mops": 6.72,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 10.92,
+            "binary_ms": 29.238,
+            "w_ms": 120.8,
+            "binary_mops": 6.84,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 11.07,
+            "binary_ms": 28.842,
+            "w_ms": 123.046,
+            "binary_mops": 6.93,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 11.22,
+            "binary_ms": 40.506,
+            "w_ms": 120.078,
+            "binary_mops": 4.94,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 11.38,
+            "binary_ms": 28.065,
+            "w_ms": 123.583,
+            "binary_mops": 7.13,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 11.54,
+            "binary_ms": 28.55,
+            "w_ms": 140.85,
+            "binary_mops": 7.01,
+            "w_mops": 1.42
+        },
+        {
+            "timestamp": 11.71,
+            "binary_ms": 28.014,
+            "w_ms": 121.205,
+            "binary_mops": 7.14,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 11.86,
+            "binary_ms": 25.844,
+            "w_ms": 153.79,
+            "binary_mops": 7.74,
+            "w_mops": 1.3
+        },
+        {
+            "timestamp": 12.04,
+            "binary_ms": 36.886,
+            "w_ms": 142.284,
+            "binary_mops": 5.42,
+            "w_mops": 1.41
+        },
+        {
+            "timestamp": 12.22,
+            "binary_ms": 32.582,
+            "w_ms": 128.135,
+            "binary_mops": 6.14,
+            "w_mops": 1.56
+        },
+        {
+            "timestamp": 12.38,
+            "binary_ms": 42.99,
+            "w_ms": 119.416,
+            "binary_mops": 4.65,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 12.54,
+            "binary_ms": 30.053,
+            "w_ms": 121.117,
+            "binary_mops": 6.65,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 12.7,
+            "binary_ms": 30.465,
+            "w_ms": 121.985,
+            "binary_mops": 6.56,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 12.85,
+            "binary_ms": 30.612,
+            "w_ms": 116.665,
+            "binary_mops": 6.53,
+            "w_mops": 1.71
+        },
+        {
+            "timestamp": 13.0,
+            "binary_ms": 31.553,
+            "w_ms": 122.374,
+            "binary_mops": 6.34,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 13.15,
+            "binary_ms": 31.692,
+            "w_ms": 121.813,
+            "binary_mops": 6.31,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 13.31,
+            "binary_ms": 31.277,
+            "w_ms": 121.962,
+            "binary_mops": 6.39,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 13.46,
+            "binary_ms": 32.88,
+            "w_ms": 122.212,
+            "binary_mops": 6.08,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 13.62,
+            "binary_ms": 31.204,
+            "w_ms": 122.373,
+            "binary_mops": 6.41,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 13.77,
+            "binary_ms": 39.582,
+            "w_ms": 120.671,
+            "binary_mops": 5.05,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 13.93,
+            "binary_ms": 31.261,
+            "w_ms": 116.713,
+            "binary_mops": 6.4,
+            "w_mops": 1.71
+        },
+        {
+            "timestamp": 14.08,
+            "binary_ms": 31.073,
+            "w_ms": 125.364,
+            "binary_mops": 6.44,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 14.24,
+            "binary_ms": 31.81,
+            "w_ms": 121.685,
+            "binary_mops": 6.29,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 14.4,
+            "binary_ms": 34.301,
+            "w_ms": 134.572,
+            "binary_mops": 5.83,
+            "w_mops": 1.49
+        },
+        {
+            "timestamp": 14.57,
+            "binary_ms": 33.267,
+            "w_ms": 131.561,
+            "binary_mops": 6.01,
+            "w_mops": 1.52
+        },
+        {
+            "timestamp": 14.73,
+            "binary_ms": 33.095,
+            "w_ms": 150.571,
+            "binary_mops": 6.04,
+            "w_mops": 1.33
+        },
+        {
+            "timestamp": 14.92,
+            "binary_ms": 40.76,
+            "w_ms": 136.634,
+            "binary_mops": 4.91,
+            "w_mops": 1.46
+        },
+        {
+            "timestamp": 15.1,
+            "binary_ms": 34.826,
+            "w_ms": 156.344,
+            "binary_mops": 5.74,
+            "w_mops": 1.28
+        },
+        {
+            "timestamp": 15.29,
+            "binary_ms": 36.435,
+            "w_ms": 134.52,
+            "binary_mops": 5.49,
+            "w_mops": 1.49
+        },
+        {
+            "timestamp": 15.46,
+            "binary_ms": 36.144,
+            "w_ms": 126.849,
+            "binary_mops": 5.53,
+            "w_mops": 1.58
+        },
+        {
+            "timestamp": 15.62,
+            "binary_ms": 34.94,
+            "w_ms": 136.512,
+            "binary_mops": 5.72,
+            "w_mops": 1.47
+        },
+        {
+            "timestamp": 15.8,
+            "binary_ms": 34.661,
+            "w_ms": 127.088,
+            "binary_mops": 5.77,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 15.96,
+            "binary_ms": 32.972,
+            "w_ms": 126.913,
+            "binary_mops": 6.07,
+            "w_mops": 1.58
+        },
+        {
+            "timestamp": 16.12,
+            "binary_ms": 32.737,
+            "w_ms": 119.566,
+            "binary_mops": 6.11,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 16.27,
+            "binary_ms": 31.439,
+            "w_ms": 120.357,
+            "binary_mops": 6.36,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 16.43,
+            "binary_ms": 31.397,
+            "w_ms": 119.654,
+            "binary_mops": 6.37,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 16.58,
+            "binary_ms": 31.18,
+            "w_ms": 120.035,
+            "binary_mops": 6.41,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 16.73,
+            "binary_ms": 30.81,
+            "w_ms": 119.805,
+            "binary_mops": 6.49,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 16.88,
+            "binary_ms": 31.386,
+            "w_ms": 119.613,
+            "binary_mops": 6.37,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 17.04,
+            "binary_ms": 29.782,
+            "w_ms": 120.013,
+            "binary_mops": 6.72,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 17.19,
+            "binary_ms": 30.032,
+            "w_ms": 118.388,
+            "binary_mops": 6.66,
+            "w_mops": 1.69
+        },
+        {
+            "timestamp": 17.34,
+            "binary_ms": 27.379,
+            "w_ms": 122.326,
+            "binary_mops": 7.3,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 17.49,
+            "binary_ms": 28.892,
+            "w_ms": 117.623,
+            "binary_mops": 6.92,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 17.63,
+            "binary_ms": 26.164,
+            "w_ms": 114.463,
+            "binary_mops": 7.64,
+            "w_mops": 1.75
+        },
+        {
+            "timestamp": 17.78,
+            "binary_ms": 25.675,
+            "w_ms": 119.301,
+            "binary_mops": 7.79,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 17.92,
+            "binary_ms": 26.565,
+            "w_ms": 115.624,
+            "binary_mops": 7.53,
+            "w_mops": 1.73
+        },
+        {
+            "timestamp": 18.07,
+            "binary_ms": 25.577,
+            "w_ms": 123.089,
+            "binary_mops": 7.82,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 18.21,
+            "binary_ms": 26.822,
+            "w_ms": 117.316,
+            "binary_mops": 7.46,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 18.36,
+            "binary_ms": 25.962,
+            "w_ms": 114.187,
+            "binary_mops": 7.7,
+            "w_mops": 1.75
+        },
+        {
+            "timestamp": 18.5,
+            "binary_ms": 34.08,
+            "w_ms": 116.124,
+            "binary_mops": 5.87,
+            "w_mops": 1.72
+        },
+        {
+            "timestamp": 18.65,
+            "binary_ms": 27.589,
+            "w_ms": 117.759,
+            "binary_mops": 7.25,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 18.8,
+            "binary_ms": 29.515,
+            "w_ms": 151.171,
+            "binary_mops": 6.78,
+            "w_mops": 1.32
+        },
+        {
+            "timestamp": 18.98,
+            "binary_ms": 31.52,
+            "w_ms": 123.825,
+            "binary_mops": 6.35,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 19.14,
+            "binary_ms": 30.903,
+            "w_ms": 125.493,
+            "binary_mops": 6.47,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 19.3,
+            "binary_ms": 32.396,
+            "w_ms": 122.246,
+            "binary_mops": 6.17,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 19.45,
+            "binary_ms": 38.411,
+            "w_ms": 123.58,
+            "binary_mops": 5.21,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 19.61,
+            "binary_ms": 32.327,
+            "w_ms": 121.727,
+            "binary_mops": 6.19,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 19.77,
+            "binary_ms": 32.008,
+            "w_ms": 124.126,
+            "binary_mops": 6.25,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 19.93,
+            "binary_ms": 31.887,
+            "w_ms": 125.98,
+            "binary_mops": 6.27,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 20.09,
+            "binary_ms": 31.622,
+            "w_ms": 139.142,
+            "binary_mops": 6.32,
+            "w_mops": 1.44
+        },
+        {
+            "timestamp": 20.26,
+            "binary_ms": 39.152,
+            "w_ms": 154.975,
+            "binary_mops": 5.11,
+            "w_mops": 1.29
+        },
+        {
+            "timestamp": 20.45,
+            "binary_ms": 36.519,
+            "w_ms": 138.886,
+            "binary_mops": 5.48,
+            "w_mops": 1.44
+        },
+        {
+            "timestamp": 20.63,
+            "binary_ms": 34.954,
+            "w_ms": 137.981,
+            "binary_mops": 5.72,
+            "w_mops": 1.45
+        },
+        {
+            "timestamp": 20.8,
+            "binary_ms": 35.744,
+            "w_ms": 161.147,
+            "binary_mops": 5.6,
+            "w_mops": 1.24
+        },
+        {
+            "timestamp": 21.0,
+            "binary_ms": 42.045,
+            "w_ms": 169.112,
+            "binary_mops": 4.76,
+            "w_mops": 1.18
+        },
+        {
+            "timestamp": 21.21,
+            "binary_ms": 38.427,
+            "w_ms": 146.124,
+            "binary_mops": 5.2,
+            "w_mops": 1.37
+        },
+        {
+            "timestamp": 21.4,
+            "binary_ms": 37.773,
+            "w_ms": 148.507,
+            "binary_mops": 5.29,
+            "w_mops": 1.35
+        },
+        {
+            "timestamp": 21.59,
+            "binary_ms": 36.293,
+            "w_ms": 135.626,
+            "binary_mops": 5.51,
+            "w_mops": 1.47
+        },
+        {
+            "timestamp": 21.76,
+            "binary_ms": 34.558,
+            "w_ms": 133.857,
+            "binary_mops": 5.79,
+            "w_mops": 1.49
+        },
+        {
+            "timestamp": 21.93,
+            "binary_ms": 33.997,
+            "w_ms": 126.129,
+            "binary_mops": 5.88,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 22.09,
+            "binary_ms": 32.831,
+            "w_ms": 132.563,
+            "binary_mops": 6.09,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 22.26,
+            "binary_ms": 33.756,
+            "w_ms": 124.155,
+            "binary_mops": 5.92,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 22.42,
+            "binary_ms": 32.06,
+            "w_ms": 124.218,
+            "binary_mops": 6.24,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 22.58,
+            "binary_ms": 32.798,
+            "w_ms": 125.653,
+            "binary_mops": 6.1,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 22.74,
+            "binary_ms": 32.028,
+            "w_ms": 123.031,
+            "binary_mops": 6.24,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 22.89,
+            "binary_ms": 39.659,
+            "w_ms": 121.18,
+            "binary_mops": 5.04,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 23.05,
+            "binary_ms": 31.485,
+            "w_ms": 125.284,
+            "binary_mops": 6.35,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 23.21,
+            "binary_ms": 31.139,
+            "w_ms": 123.527,
+            "binary_mops": 6.42,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 23.37,
+            "binary_ms": 29.729,
+            "w_ms": 116.247,
+            "binary_mops": 6.73,
+            "w_mops": 1.72
+        },
+        {
+            "timestamp": 23.52,
+            "binary_ms": 28.976,
+            "w_ms": 131.202,
+            "binary_mops": 6.9,
+            "w_mops": 1.52
+        },
+        {
+            "timestamp": 23.68,
+            "binary_ms": 27.812,
+            "w_ms": 125.831,
+            "binary_mops": 7.19,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 23.83,
+            "binary_ms": 32.35,
+            "w_ms": 117.532,
+            "binary_mops": 6.18,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 23.98,
+            "binary_ms": 26.961,
+            "w_ms": 130.113,
+            "binary_mops": 7.42,
+            "w_mops": 1.54
+        },
+        {
+            "timestamp": 24.14,
+            "binary_ms": 26.256,
+            "w_ms": 117.73,
+            "binary_mops": 7.62,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 24.29,
+            "binary_ms": 26.172,
+            "w_ms": 129.513,
+            "binary_mops": 7.64,
+            "w_mops": 1.54
+        },
+        {
+            "timestamp": 24.44,
+            "binary_ms": 25.626,
+            "w_ms": 130.312,
+            "binary_mops": 7.8,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 24.6,
+            "binary_ms": 32.838,
+            "w_ms": 119.019,
+            "binary_mops": 6.09,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 24.75,
+            "binary_ms": 27.414,
+            "w_ms": 120.174,
+            "binary_mops": 7.3,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 24.9,
+            "binary_ms": 32.086,
+            "w_ms": 118.202,
+            "binary_mops": 6.23,
+            "w_mops": 1.69
+        },
+        {
+            "timestamp": 25.05,
+            "binary_ms": 29.615,
+            "w_ms": 127.797,
+            "binary_mops": 6.75,
+            "w_mops": 1.56
+        },
+        {
+            "timestamp": 25.21,
+            "binary_ms": 33.47,
+            "w_ms": 124.359,
+            "binary_mops": 5.98,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 25.37,
+            "binary_ms": 30.721,
+            "w_ms": 124.346,
+            "binary_mops": 6.51,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 25.53,
+            "binary_ms": 31.97,
+            "w_ms": 122.114,
+            "binary_mops": 6.26,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 25.68,
+            "binary_ms": 31.884,
+            "w_ms": 120.687,
+            "binary_mops": 6.27,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 25.83,
+            "binary_ms": 32.196,
+            "w_ms": 125.403,
+            "binary_mops": 6.21,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 25.99,
+            "binary_ms": 30.262,
+            "w_ms": 120.889,
+            "binary_mops": 6.61,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 26.15,
+            "binary_ms": 33.549,
+            "w_ms": 121.088,
+            "binary_mops": 5.96,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 26.3,
+            "binary_ms": 31.585,
+            "w_ms": 121.098,
+            "binary_mops": 6.33,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 26.46,
+            "binary_ms": 31.641,
+            "w_ms": 126.042,
+            "binary_mops": 6.32,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 26.62,
+            "binary_ms": 33.905,
+            "w_ms": 127.625,
+            "binary_mops": 5.9,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 26.78,
+            "binary_ms": 33.433,
+            "w_ms": 127.243,
+            "binary_mops": 5.98,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 26.94,
+            "binary_ms": 33.853,
+            "w_ms": 127.718,
+            "binary_mops": 5.91,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 27.1,
+            "binary_ms": 35.04,
+            "w_ms": 131.545,
+            "binary_mops": 5.71,
+            "w_mops": 1.52
+        },
+        {
+            "timestamp": 27.27,
+            "binary_ms": 34.269,
+            "w_ms": 123.721,
+            "binary_mops": 5.84,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 27.43,
+            "binary_ms": 30.913,
+            "w_ms": 136.658,
+            "binary_mops": 6.47,
+            "w_mops": 1.46
+        },
+        {
+            "timestamp": 27.6,
+            "binary_ms": 32.518,
+            "w_ms": 120.165,
+            "binary_mops": 6.15,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 27.75,
+            "binary_ms": 29.909,
+            "w_ms": 121.67,
+            "binary_mops": 6.69,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 27.9,
+            "binary_ms": 32.61,
+            "w_ms": 117.325,
+            "binary_mops": 6.13,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 28.06,
+            "binary_ms": 30.606,
+            "w_ms": 131.359,
+            "binary_mops": 6.53,
+            "w_mops": 1.52
+        },
+        {
+            "timestamp": 28.22,
+            "binary_ms": 32.125,
+            "w_ms": 130.942,
+            "binary_mops": 6.23,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 28.38,
+            "binary_ms": 31.401,
+            "w_ms": 115.543,
+            "binary_mops": 6.37,
+            "w_mops": 1.73
+        },
+        {
+            "timestamp": 28.53,
+            "binary_ms": 30.214,
+            "w_ms": 117.65,
+            "binary_mops": 6.62,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 28.68,
+            "binary_ms": 29.963,
+            "w_ms": 117.607,
+            "binary_mops": 6.67,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 28.83,
+            "binary_ms": 30.529,
+            "w_ms": 136.229,
+            "binary_mops": 6.55,
+            "w_mops": 1.47
+        },
+        {
+            "timestamp": 29.0,
+            "binary_ms": 45.725,
+            "w_ms": 132.205,
+            "binary_mops": 4.37,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 29.18,
+            "binary_ms": 33.008,
+            "w_ms": 131.69,
+            "binary_mops": 6.06,
+            "w_mops": 1.52
+        },
+        {
+            "timestamp": 29.34,
+            "binary_ms": 32.136,
+            "w_ms": 124.033,
+            "binary_mops": 6.22,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 29.5,
+            "binary_ms": 30.178,
+            "w_ms": 131.419,
+            "binary_mops": 6.63,
+            "w_mops": 1.52
+        },
+        {
+            "timestamp": 29.66,
+            "binary_ms": 29.663,
+            "w_ms": 121.8,
+            "binary_mops": 6.74,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 29.81,
+            "binary_ms": 28.983,
+            "w_ms": 128.162,
+            "binary_mops": 6.9,
+            "w_mops": 1.56
+        },
+        {
+            "timestamp": 29.97,
+            "binary_ms": 28.132,
+            "w_ms": 134.76,
+            "binary_mops": 7.11,
+            "w_mops": 1.48
+        },
+        {
+            "timestamp": 30.14,
+            "binary_ms": 28.834,
+            "w_ms": 128.703,
+            "binary_mops": 6.94,
+            "w_mops": 1.55
+        },
+        {
+            "timestamp": 30.3,
+            "binary_ms": 39.812,
+            "w_ms": 172.887,
+            "binary_mops": 5.02,
+            "w_mops": 1.16
+        },
+        {
+            "timestamp": 30.51,
+            "binary_ms": 35.939,
+            "w_ms": 159.793,
+            "binary_mops": 5.56,
+            "w_mops": 1.25
+        },
+        {
+            "timestamp": 30.71,
+            "binary_ms": 40.029,
+            "w_ms": 209.011,
+            "binary_mops": 5.0,
+            "w_mops": 0.96
+        },
+        {
+            "timestamp": 30.96,
+            "binary_ms": 39.157,
+            "w_ms": 164.925,
+            "binary_mops": 5.11,
+            "w_mops": 1.21
+        },
+        {
+            "timestamp": 31.16,
+            "binary_ms": 42.173,
+            "w_ms": 177.38,
+            "binary_mops": 4.74,
+            "w_mops": 1.13
+        },
+        {
+            "timestamp": 31.38,
+            "binary_ms": 39.115,
+            "w_ms": 147.882,
+            "binary_mops": 5.11,
+            "w_mops": 1.35
+        },
+        {
+            "timestamp": 31.57,
+            "binary_ms": 35.896,
+            "w_ms": 140.829,
+            "binary_mops": 5.57,
+            "w_mops": 1.42
+        },
+        {
+            "timestamp": 31.75,
+            "binary_ms": 33.961,
+            "w_ms": 132.379,
+            "binary_mops": 5.89,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 31.92,
+            "binary_ms": 32.337,
+            "w_ms": 125.682,
+            "binary_mops": 6.18,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 32.08,
+            "binary_ms": 33.627,
+            "w_ms": 129.251,
+            "binary_mops": 5.95,
+            "w_mops": 1.55
+        },
+        {
+            "timestamp": 32.24,
+            "binary_ms": 32.221,
+            "w_ms": 119.025,
+            "binary_mops": 6.21,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 32.4,
+            "binary_ms": 32.057,
+            "w_ms": 120.065,
+            "binary_mops": 6.24,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 32.55,
+            "binary_ms": 31.31,
+            "w_ms": 121.453,
+            "binary_mops": 6.39,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 32.7,
+            "binary_ms": 32.943,
+            "w_ms": 119.839,
+            "binary_mops": 6.07,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 32.86,
+            "binary_ms": 31.29,
+            "w_ms": 140.08,
+            "binary_mops": 6.39,
+            "w_mops": 1.43
+        },
+        {
+            "timestamp": 33.03,
+            "binary_ms": 32.987,
+            "w_ms": 119.797,
+            "binary_mops": 6.06,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 33.18,
+            "binary_ms": 31.543,
+            "w_ms": 119.727,
+            "binary_mops": 6.34,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 33.34,
+            "binary_ms": 32.787,
+            "w_ms": 127.682,
+            "binary_mops": 6.1,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 33.5,
+            "binary_ms": 33.312,
+            "w_ms": 123.164,
+            "binary_mops": 6.0,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 33.66,
+            "binary_ms": 30.882,
+            "w_ms": 123.166,
+            "binary_mops": 6.48,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 33.81,
+            "binary_ms": 30.928,
+            "w_ms": 123.225,
+            "binary_mops": 6.47,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 33.97,
+            "binary_ms": 30.958,
+            "w_ms": 123.103,
+            "binary_mops": 6.46,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 34.12,
+            "binary_ms": 31.56,
+            "w_ms": 121.589,
+            "binary_mops": 6.34,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 34.28,
+            "binary_ms": 32.3,
+            "w_ms": 125.096,
+            "binary_mops": 6.19,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 34.43,
+            "binary_ms": 47.342,
+            "w_ms": 129.216,
+            "binary_mops": 4.22,
+            "w_mops": 1.55
+        },
+        {
+            "timestamp": 34.61,
+            "binary_ms": 31.857,
+            "w_ms": 137.584,
+            "binary_mops": 6.28,
+            "w_mops": 1.45
+        },
+        {
+            "timestamp": 34.78,
+            "binary_ms": 32.844,
+            "w_ms": 136.982,
+            "binary_mops": 6.09,
+            "w_mops": 1.46
+        },
+        {
+            "timestamp": 34.95,
+            "binary_ms": 33.162,
+            "w_ms": 120.874,
+            "binary_mops": 6.03,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 35.11,
+            "binary_ms": 30.511,
+            "w_ms": 132.981,
+            "binary_mops": 6.56,
+            "w_mops": 1.5
+        },
+        {
+            "timestamp": 35.27,
+            "binary_ms": 31.887,
+            "w_ms": 121.168,
+            "binary_mops": 6.27,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 35.43,
+            "binary_ms": 39.155,
+            "w_ms": 123.895,
+            "binary_mops": 5.11,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 35.59,
+            "binary_ms": 30.658,
+            "w_ms": 119.884,
+            "binary_mops": 6.52,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 35.74,
+            "binary_ms": 29.308,
+            "w_ms": 114.427,
+            "binary_mops": 6.82,
+            "w_mops": 1.75
+        },
+        {
+            "timestamp": 35.89,
+            "binary_ms": 29.739,
+            "w_ms": 117.871,
+            "binary_mops": 6.73,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 36.04,
+            "binary_ms": 29.194,
+            "w_ms": 119.172,
+            "binary_mops": 6.85,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 36.19,
+            "binary_ms": 28.894,
+            "w_ms": 133.47,
+            "binary_mops": 6.92,
+            "w_mops": 1.5
+        },
+        {
+            "timestamp": 36.35,
+            "binary_ms": 30.177,
+            "w_ms": 119.394,
+            "binary_mops": 6.63,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 36.5,
+            "binary_ms": 27.581,
+            "w_ms": 125.18,
+            "binary_mops": 7.25,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 36.65,
+            "binary_ms": 28.162,
+            "w_ms": 136.787,
+            "binary_mops": 7.1,
+            "w_mops": 1.46
+        },
+        {
+            "timestamp": 36.82,
+            "binary_ms": 28.035,
+            "w_ms": 127.564,
+            "binary_mops": 7.13,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 36.98,
+            "binary_ms": 28.037,
+            "w_ms": 128.672,
+            "binary_mops": 7.13,
+            "w_mops": 1.55
+        },
+        {
+            "timestamp": 37.14,
+            "binary_ms": 28.401,
+            "w_ms": 120.643,
+            "binary_mops": 7.04,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 37.28,
+            "binary_ms": 27.992,
+            "w_ms": 121.709,
+            "binary_mops": 7.15,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 37.44,
+            "binary_ms": 28.546,
+            "w_ms": 120.236,
+            "binary_mops": 7.01,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 37.59,
+            "binary_ms": 27.801,
+            "w_ms": 125.639,
+            "binary_mops": 7.19,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 37.74,
+            "binary_ms": 29.584,
+            "w_ms": 120.472,
+            "binary_mops": 6.76,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 37.89,
+            "binary_ms": 29.44,
+            "w_ms": 115.077,
+            "binary_mops": 6.79,
+            "w_mops": 1.74
+        },
+        {
+            "timestamp": 38.04,
+            "binary_ms": 29.946,
+            "w_ms": 117.709,
+            "binary_mops": 6.68,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 38.19,
+            "binary_ms": 29.819,
+            "w_ms": 116.86,
+            "binary_mops": 6.71,
+            "w_mops": 1.71
+        },
+        {
+            "timestamp": 38.33,
+            "binary_ms": 32.044,
+            "w_ms": 117.435,
+            "binary_mops": 6.24,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 38.48,
+            "binary_ms": 32.252,
+            "w_ms": 119.248,
+            "binary_mops": 6.2,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 38.64,
+            "binary_ms": 31.916,
+            "w_ms": 120.213,
+            "binary_mops": 6.27,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 38.79,
+            "binary_ms": 31.978,
+            "w_ms": 121.415,
+            "binary_mops": 6.25,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 38.95,
+            "binary_ms": 31.578,
+            "w_ms": 123.144,
+            "binary_mops": 6.33,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 39.1,
+            "binary_ms": 33.76,
+            "w_ms": 129.875,
+            "binary_mops": 5.92,
+            "w_mops": 1.54
+        },
+        {
+            "timestamp": 39.27,
+            "binary_ms": 33.71,
+            "w_ms": 133.686,
+            "binary_mops": 5.93,
+            "w_mops": 1.5
+        },
+        {
+            "timestamp": 39.43,
+            "binary_ms": 32.251,
+            "w_ms": 119.227,
+            "binary_mops": 6.2,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 39.59,
+            "binary_ms": 31.869,
+            "w_ms": 120.292,
+            "binary_mops": 6.28,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 39.74,
+            "binary_ms": 31.885,
+            "w_ms": 137.462,
+            "binary_mops": 6.27,
+            "w_mops": 1.45
+        },
+        {
+            "timestamp": 39.91,
+            "binary_ms": 39.973,
+            "w_ms": 119.406,
+            "binary_mops": 5.0,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 40.07,
+            "binary_ms": 30.06,
+            "w_ms": 120.261,
+            "binary_mops": 6.65,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 40.22,
+            "binary_ms": 44.522,
+            "w_ms": 138.773,
+            "binary_mops": 4.49,
+            "w_mops": 1.44
+        },
+        {
+            "timestamp": 40.41,
+            "binary_ms": 35.081,
+            "w_ms": 148.796,
+            "binary_mops": 5.7,
+            "w_mops": 1.34
+        },
+        {
+            "timestamp": 40.59,
+            "binary_ms": 37.886,
+            "w_ms": 157.223,
+            "binary_mops": 5.28,
+            "w_mops": 1.27
+        },
+        {
+            "timestamp": 40.79,
+            "binary_ms": 41.146,
+            "w_ms": 171.689,
+            "binary_mops": 4.86,
+            "w_mops": 1.16
+        },
+        {
+            "timestamp": 41.0,
+            "binary_ms": 46.67,
+            "w_ms": 157.872,
+            "binary_mops": 4.29,
+            "w_mops": 1.27
+        },
+        {
+            "timestamp": 41.21,
+            "binary_ms": 50.494,
+            "w_ms": 167.201,
+            "binary_mops": 3.96,
+            "w_mops": 1.2
+        },
+        {
+            "timestamp": 41.43,
+            "binary_ms": 38.408,
+            "w_ms": 139.558,
+            "binary_mops": 5.21,
+            "w_mops": 1.43
+        },
+        {
+            "timestamp": 41.61,
+            "binary_ms": 36.605,
+            "w_ms": 143.835,
+            "binary_mops": 5.46,
+            "w_mops": 1.39
+        },
+        {
+            "timestamp": 41.79,
+            "binary_ms": 35.88,
+            "w_ms": 130.772,
+            "binary_mops": 5.57,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 41.96,
+            "binary_ms": 31.776,
+            "w_ms": 125.408,
+            "binary_mops": 6.29,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 42.11,
+            "binary_ms": 30.902,
+            "w_ms": 119.866,
+            "binary_mops": 6.47,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 42.27,
+            "binary_ms": 29.353,
+            "w_ms": 127.439,
+            "binary_mops": 6.81,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 42.43,
+            "binary_ms": 30.346,
+            "w_ms": 128.609,
+            "binary_mops": 6.59,
+            "w_mops": 1.56
+        },
+        {
+            "timestamp": 42.59,
+            "binary_ms": 30.826,
+            "w_ms": 135.49,
+            "binary_mops": 6.49,
+            "w_mops": 1.48
+        },
+        {
+            "timestamp": 42.75,
+            "binary_ms": 29.657,
+            "w_ms": 145.039,
+            "binary_mops": 6.74,
+            "w_mops": 1.38
+        },
+        {
+            "timestamp": 42.93,
+            "binary_ms": 33.237,
+            "w_ms": 131.931,
+            "binary_mops": 6.02,
+            "w_mops": 1.52
+        },
+        {
+            "timestamp": 43.1,
+            "binary_ms": 40.837,
+            "w_ms": 129.489,
+            "binary_mops": 4.9,
+            "w_mops": 1.54
+        },
+        {
+            "timestamp": 43.27,
+            "binary_ms": 27.232,
+            "w_ms": 127.67,
+            "binary_mops": 7.34,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 43.42,
+            "binary_ms": 28.885,
+            "w_ms": 122.428,
+            "binary_mops": 6.92,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 43.58,
+            "binary_ms": 40.988,
+            "w_ms": 124.313,
+            "binary_mops": 4.88,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 43.74,
+            "binary_ms": 30.084,
+            "w_ms": 125.312,
+            "binary_mops": 6.65,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 43.9,
+            "binary_ms": 31.063,
+            "w_ms": 119.721,
+            "binary_mops": 6.44,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 44.05,
+            "binary_ms": 30.671,
+            "w_ms": 116.419,
+            "binary_mops": 6.52,
+            "w_mops": 1.72
+        },
+        {
+            "timestamp": 44.2,
+            "binary_ms": 28.406,
+            "w_ms": 120.637,
+            "binary_mops": 7.04,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 44.35,
+            "binary_ms": 30.236,
+            "w_ms": 117.6,
+            "binary_mops": 6.61,
+            "w_mops": 1.7
+        },
+        {
+            "timestamp": 44.5,
+            "binary_ms": 29.482,
+            "w_ms": 133.871,
+            "binary_mops": 6.78,
+            "w_mops": 1.49
+        },
+        {
+            "timestamp": 44.66,
+            "binary_ms": 30.187,
+            "w_ms": 118.047,
+            "binary_mops": 6.63,
+            "w_mops": 1.69
+        },
+        {
+            "timestamp": 44.81,
+            "binary_ms": 31.333,
+            "w_ms": 123.604,
+            "binary_mops": 6.38,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 44.97,
+            "binary_ms": 32.994,
+            "w_ms": 120.259,
+            "binary_mops": 6.06,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 45.12,
+            "binary_ms": 31.233,
+            "w_ms": 120.215,
+            "binary_mops": 6.4,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 45.27,
+            "binary_ms": 31.709,
+            "w_ms": 121.579,
+            "binary_mops": 6.31,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 45.43,
+            "binary_ms": 42.099,
+            "w_ms": 123.136,
+            "binary_mops": 4.75,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 45.6,
+            "binary_ms": 31.506,
+            "w_ms": 120.073,
+            "binary_mops": 6.35,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 45.75,
+            "binary_ms": 32.929,
+            "w_ms": 122.706,
+            "binary_mops": 6.07,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 45.91,
+            "binary_ms": 31.246,
+            "w_ms": 120.369,
+            "binary_mops": 6.4,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 46.06,
+            "binary_ms": 33.294,
+            "w_ms": 131.913,
+            "binary_mops": 6.01,
+            "w_mops": 1.52
+        },
+        {
+            "timestamp": 46.22,
+            "binary_ms": 30.149,
+            "w_ms": 120.745,
+            "binary_mops": 6.63,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 46.38,
+            "binary_ms": 30.567,
+            "w_ms": 122.052,
+            "binary_mops": 6.54,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 46.53,
+            "binary_ms": 32.665,
+            "w_ms": 125.05,
+            "binary_mops": 6.12,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 46.69,
+            "binary_ms": 33.807,
+            "w_ms": 126.318,
+            "binary_mops": 5.92,
+            "w_mops": 1.58
+        },
+        {
+            "timestamp": 46.85,
+            "binary_ms": 34.079,
+            "w_ms": 138.646,
+            "binary_mops": 5.87,
+            "w_mops": 1.44
+        },
+        {
+            "timestamp": 47.02,
+            "binary_ms": 33.851,
+            "w_ms": 127.757,
+            "binary_mops": 5.91,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 47.19,
+            "binary_ms": 33.883,
+            "w_ms": 137.622,
+            "binary_mops": 5.9,
+            "w_mops": 1.45
+        },
+        {
+            "timestamp": 47.36,
+            "binary_ms": 37.072,
+            "w_ms": 120.8,
+            "binary_mops": 5.39,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 47.52,
+            "binary_ms": 31.385,
+            "w_ms": 124.407,
+            "binary_mops": 6.37,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 47.68,
+            "binary_ms": 31.537,
+            "w_ms": 119.98,
+            "binary_mops": 6.34,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 47.83,
+            "binary_ms": 31.606,
+            "w_ms": 121.413,
+            "binary_mops": 6.33,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 47.98,
+            "binary_ms": 31.801,
+            "w_ms": 122.203,
+            "binary_mops": 6.29,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 48.14,
+            "binary_ms": 32.34,
+            "w_ms": 129.208,
+            "binary_mops": 6.18,
+            "w_mops": 1.55
+        },
+        {
+            "timestamp": 48.3,
+            "binary_ms": 31.053,
+            "w_ms": 119.023,
+            "binary_mops": 6.44,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 48.45,
+            "binary_ms": 28.774,
+            "w_ms": 116.052,
+            "binary_mops": 6.95,
+            "w_mops": 1.72
+        },
+        {
+            "timestamp": 48.6,
+            "binary_ms": 28.955,
+            "w_ms": 117.076,
+            "binary_mops": 6.91,
+            "w_mops": 1.71
+        },
+        {
+            "timestamp": 48.75,
+            "binary_ms": 28.12,
+            "w_ms": 119.922,
+            "binary_mops": 7.11,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 48.89,
+            "binary_ms": 30.364,
+            "w_ms": 126.974,
+            "binary_mops": 6.59,
+            "w_mops": 1.58
+        },
+        {
+            "timestamp": 49.05,
+            "binary_ms": 29.27,
+            "w_ms": 123.107,
+            "binary_mops": 6.83,
+            "w_mops": 1.62
+        },
+        {
+            "timestamp": 49.21,
+            "binary_ms": 27.052,
+            "w_ms": 132.669,
+            "binary_mops": 7.39,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 49.37,
+            "binary_ms": 27.97,
+            "w_ms": 125.851,
+            "binary_mops": 7.15,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 49.52,
+            "binary_ms": 27.922,
+            "w_ms": 125.135,
+            "binary_mops": 7.16,
+            "w_mops": 1.6
+        },
+        {
+            "timestamp": 49.68,
+            "binary_ms": 27.063,
+            "w_ms": 133.603,
+            "binary_mops": 7.39,
+            "w_mops": 1.5
+        },
+        {
+            "timestamp": 49.84,
+            "binary_ms": 27.684,
+            "w_ms": 127.293,
+            "binary_mops": 7.22,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 49.99,
+            "binary_ms": 28.432,
+            "w_ms": 121.061,
+            "binary_mops": 7.03,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 50.14,
+            "binary_ms": 29.013,
+            "w_ms": 132.684,
+            "binary_mops": 6.89,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 50.31,
+            "binary_ms": 36.244,
+            "w_ms": 144.701,
+            "binary_mops": 5.52,
+            "w_mops": 1.38
+        },
+        {
+            "timestamp": 50.49,
+            "binary_ms": 38.54,
+            "w_ms": 148.569,
+            "binary_mops": 5.19,
+            "w_mops": 1.35
+        },
+        {
+            "timestamp": 50.68,
+            "binary_ms": 49.177,
+            "w_ms": 170.486,
+            "binary_mops": 4.07,
+            "w_mops": 1.17
+        },
+        {
+            "timestamp": 50.9,
+            "binary_ms": 63.731,
+            "w_ms": 229.023,
+            "binary_mops": 3.14,
+            "w_mops": 0.87
+        },
+        {
+            "timestamp": 51.19,
+            "binary_ms": 52.338,
+            "w_ms": 186.374,
+            "binary_mops": 3.82,
+            "w_mops": 1.07
+        },
+        {
+            "timestamp": 51.43,
+            "binary_ms": 57.762,
+            "w_ms": 162.745,
+            "binary_mops": 3.46,
+            "w_mops": 1.23
+        },
+        {
+            "timestamp": 51.66,
+            "binary_ms": 50.234,
+            "w_ms": 150.378,
+            "binary_mops": 3.98,
+            "w_mops": 1.33
+        },
+        {
+            "timestamp": 51.86,
+            "binary_ms": 51.051,
+            "w_ms": 141.933,
+            "binary_mops": 3.92,
+            "w_mops": 1.41
+        },
+        {
+            "timestamp": 52.05,
+            "binary_ms": 35.863,
+            "w_ms": 131.001,
+            "binary_mops": 5.58,
+            "w_mops": 1.53
+        },
+        {
+            "timestamp": 52.22,
+            "binary_ms": 32.756,
+            "w_ms": 143.872,
+            "binary_mops": 6.11,
+            "w_mops": 1.39
+        },
+        {
+            "timestamp": 52.4,
+            "binary_ms": 33.823,
+            "w_ms": 127.602,
+            "binary_mops": 5.91,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 52.56,
+            "binary_ms": 30.5,
+            "w_ms": 122.329,
+            "binary_mops": 6.56,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 52.71,
+            "binary_ms": 46.693,
+            "w_ms": 119.74,
+            "binary_mops": 4.28,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 52.88,
+            "binary_ms": 31.483,
+            "w_ms": 119.608,
+            "binary_mops": 6.35,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 53.04,
+            "binary_ms": 31.481,
+            "w_ms": 119.729,
+            "binary_mops": 6.35,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 53.19,
+            "binary_ms": 31.738,
+            "w_ms": 122.621,
+            "binary_mops": 6.3,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 53.34,
+            "binary_ms": 32.28,
+            "w_ms": 119.062,
+            "binary_mops": 6.2,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 53.5,
+            "binary_ms": 32.481,
+            "w_ms": 118.517,
+            "binary_mops": 6.16,
+            "w_mops": 1.69
+        },
+        {
+            "timestamp": 53.65,
+            "binary_ms": 29.997,
+            "w_ms": 121.128,
+            "binary_mops": 6.67,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 53.8,
+            "binary_ms": 30.232,
+            "w_ms": 114.45,
+            "binary_mops": 6.62,
+            "w_mops": 1.75
+        },
+        {
+            "timestamp": 53.95,
+            "binary_ms": 29.984,
+            "w_ms": 116.461,
+            "binary_mops": 6.67,
+            "w_mops": 1.72
+        },
+        {
+            "timestamp": 54.09,
+            "binary_ms": 30.617,
+            "w_ms": 119.546,
+            "binary_mops": 6.53,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 54.24,
+            "binary_ms": 40.498,
+            "w_ms": 120.272,
+            "binary_mops": 4.94,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 54.41,
+            "binary_ms": 30.805,
+            "w_ms": 120.444,
+            "binary_mops": 6.49,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 54.56,
+            "binary_ms": 31.902,
+            "w_ms": 123.954,
+            "binary_mops": 6.27,
+            "w_mops": 1.61
+        },
+        {
+            "timestamp": 54.72,
+            "binary_ms": 29.68,
+            "w_ms": 119.591,
+            "binary_mops": 6.74,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 54.87,
+            "binary_ms": 29.266,
+            "w_ms": 120.957,
+            "binary_mops": 6.83,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 55.02,
+            "binary_ms": 28.684,
+            "w_ms": 120.514,
+            "binary_mops": 6.97,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 55.17,
+            "binary_ms": 29.532,
+            "w_ms": 132.708,
+            "binary_mops": 6.77,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 55.33,
+            "binary_ms": 27.936,
+            "w_ms": 116.906,
+            "binary_mops": 7.16,
+            "w_mops": 1.71
+        },
+        {
+            "timestamp": 55.48,
+            "binary_ms": 25.787,
+            "w_ms": 113.928,
+            "binary_mops": 7.76,
+            "w_mops": 1.76
+        },
+        {
+            "timestamp": 55.62,
+            "binary_ms": 26.604,
+            "w_ms": 119.281,
+            "binary_mops": 7.52,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 55.77,
+            "binary_ms": 26.629,
+            "w_ms": 120.757,
+            "binary_mops": 7.51,
+            "w_mops": 1.66
+        },
+        {
+            "timestamp": 55.91,
+            "binary_ms": 26.63,
+            "w_ms": 132.029,
+            "binary_mops": 7.51,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 56.07,
+            "binary_ms": 27.287,
+            "w_ms": 136.431,
+            "binary_mops": 7.33,
+            "w_mops": 1.47
+        },
+        {
+            "timestamp": 56.24,
+            "binary_ms": 28.895,
+            "w_ms": 136.733,
+            "binary_mops": 6.92,
+            "w_mops": 1.46
+        },
+        {
+            "timestamp": 56.41,
+            "binary_ms": 40.519,
+            "w_ms": 119.23,
+            "binary_mops": 4.94,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 56.57,
+            "binary_ms": 31.812,
+            "w_ms": 126.138,
+            "binary_mops": 6.29,
+            "w_mops": 1.59
+        },
+        {
+            "timestamp": 56.73,
+            "binary_ms": 31.267,
+            "w_ms": 121.998,
+            "binary_mops": 6.4,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 56.88,
+            "binary_ms": 32.675,
+            "w_ms": 119.449,
+            "binary_mops": 6.12,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 57.03,
+            "binary_ms": 46.062,
+            "w_ms": 120.031,
+            "binary_mops": 4.34,
+            "w_mops": 1.67
+        },
+        {
+            "timestamp": 57.2,
+            "binary_ms": 31.155,
+            "w_ms": 115.048,
+            "binary_mops": 6.42,
+            "w_mops": 1.74
+        },
+        {
+            "timestamp": 57.35,
+            "binary_ms": 30.389,
+            "w_ms": 118.979,
+            "binary_mops": 6.58,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 57.5,
+            "binary_ms": 32.334,
+            "w_ms": 122.701,
+            "binary_mops": 6.19,
+            "w_mops": 1.63
+        },
+        {
+            "timestamp": 57.65,
+            "binary_ms": 31.685,
+            "w_ms": 119.401,
+            "binary_mops": 6.31,
+            "w_mops": 1.68
+        },
+        {
+            "timestamp": 57.81,
+            "binary_ms": 30.228,
+            "w_ms": 129.43,
+            "binary_mops": 6.62,
+            "w_mops": 1.55
+        },
+        {
+            "timestamp": 57.97,
+            "binary_ms": 31.822,
+            "w_ms": 141.909,
+            "binary_mops": 6.29,
+            "w_mops": 1.41
+        },
+        {
+            "timestamp": 58.14,
+            "binary_ms": 54.891,
+            "w_ms": 157.347,
+            "binary_mops": 3.64,
+            "w_mops": 1.27
+        },
+        {
+            "timestamp": 58.36,
+            "binary_ms": 45.561,
+            "w_ms": 146.929,
+            "binary_mops": 4.39,
+            "w_mops": 1.36
+        },
+        {
+            "timestamp": 58.55,
+            "binary_ms": 34.747,
+            "w_ms": 136.41,
+            "binary_mops": 5.76,
+            "w_mops": 1.47
+        },
+        {
+            "timestamp": 58.72,
+            "binary_ms": 34.517,
+            "w_ms": 180.512,
+            "binary_mops": 5.79,
+            "w_mops": 1.11
+        },
+        {
+            "timestamp": 58.94,
+            "binary_ms": 36.552,
+            "w_ms": 132.057,
+            "binary_mops": 5.47,
+            "w_mops": 1.51
+        },
+        {
+            "timestamp": 59.11,
+            "binary_ms": 33.052,
+            "w_ms": 126.851,
+            "binary_mops": 6.05,
+            "w_mops": 1.58
+        },
+        {
+            "timestamp": 59.27,
+            "binary_ms": 33.751,
+            "w_ms": 127.347,
+            "binary_mops": 5.93,
+            "w_mops": 1.57
+        },
+        {
+            "timestamp": 59.43,
+            "binary_ms": 31.838,
+            "w_ms": 121.837,
+            "binary_mops": 6.28,
+            "w_mops": 1.64
+        },
+        {
+            "timestamp": 59.59,
+            "binary_ms": 31.938,
+            "w_ms": 120.864,
+            "binary_mops": 6.26,
+            "w_mops": 1.65
+        },
+        {
+            "timestamp": 59.74,
+            "binary_ms": 31.616,
+            "w_ms": 134.763,
+            "binary_mops": 6.33,
+            "w_mops": 1.48
+        },
+        {
+            "timestamp": 59.91,
+            "binary_ms": 32.722,
+            "w_ms": 126.333,
+            "binary_mops": 6.11,
+            "w_mops": 1.58
+        },
+        {
+            "timestamp": 60.07,
+            "binary_ms": 30.869,
+            "w_ms": 131.546,
+            "binary_mops": 6.48,
+            "w_mops": 1.52
+        }
+    ]
+}

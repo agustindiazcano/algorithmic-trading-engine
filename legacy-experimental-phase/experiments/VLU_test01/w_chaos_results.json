@@ -1,0 +1,10 @@
+{
+ "suite": "Chaos Branch Killer",
+ "results": [
+  { "test": "Chaos Classification", "time_traditional": 0.018656, "time_w": 0.031749, "speedup": 0.587609 },
+  { "test": "Dense Clipping", "time_traditional": 0.097934, "time_w": 0.098837, "speedup": 0.990864 },
+  { "test": "Tight Collision", "time_traditional": 0.011113, "time_w": 0.063377, "speedup": 0.175348 },
+  { "test": "Complex Logic Filter", "time_traditional": 0.194205, "time_w": 0.221959, "speedup": 0.874959 },
+  { "test": "Random Decision Chains", "time_traditional": 0.051284, "time_w": 0.070822, "speedup": 0.724125 }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "radius_base": 0.15,
+  "volatility_multiplier": 2.5,
+  "inertia_up": 0.968,
+  "inertia_down": 0.898,
+  "volume_exhaustion_threshold": 0.788,
+  "take_profit_tolerance": 0.019,
+  "stop_loss_pct": 0.043,
+  "max_hold_time": 11,
+  "fitness": 16013.79
+}

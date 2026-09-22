@@ -1,0 +1,7 @@
+{
+  "experiment": "Game of Life Extreme",
+  "cells": 100000000,
+  "traditional_s": 0.311951,
+  "w_s": 0.205892,
+  "speedup": 1.51512
+}

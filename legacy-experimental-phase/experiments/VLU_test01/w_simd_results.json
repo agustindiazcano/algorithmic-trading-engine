@@ -1,0 +1,7 @@
+{
+  "test": "SIMD Audio Noise Gate",
+  "samples": 100000000,
+  "time_traditional": 1.12118,
+  "time_w": 0.077062,
+  "speedup": 14.549
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "timeframe": "1m",
+    "description": "1 minuto (scalping)",
+    "fitness": -100,
+    "return_pct": 0.0,
+    "trades": 0,
+    "win_rate": 0,
+    "avg_profit": 0,
+    "avg_hold": 0,
+    "final_equity": 10000.0
+  },
+  {
+    "timeframe": "5m",
+    "description": "5 minutos (day trading)",
+    "fitness": -100,
+    "return_pct": 0.0,
+    "trades": 0,
+    "win_rate": 0,
+    "avg_profit": 0,
+    "avg_hold": 0,
+    "final_equity": 10000.0
+  },
+  {
+    "timeframe": "15m",
+    "description": "15 minutos",
+    "fitness": -100,
+    "return_pct": 0.0,
+    "trades": 0,
+    "win_rate": 0,
+    "avg_profit": 0,
+    "avg_hold": 0,
+    "final_equity": 10000.0
+  },
+  {
+    "timeframe": "1h",
+    "description": "1 hora (swing)",
+    "fitness": 6.472202205606403,
+    "return_pct": 6.472202205606403,
+    "trades": 2,
+    "win_rate": 100.0,
+    "avg_profit": 3.433605028389386,
+    "avg_hold": 7.0,
+    "final_equity": 10647.22022056064
+  },
+  {
+    "timeframe": "4h",
+    "description": "4 horas",
+    "fitness": 7.487928930795151,
+    "return_pct": 7.487928930795151,
+    "trades": 6,
+    "win_rate": 83.33333333333334,
+    "avg_profit": 1.4919056381301623,
+    "avg_hold": 7.833333333333333,
+    "final_equity": 10748.792893079515
+  },
+  {
+    "timeframe": "1d",
+    "description": "1 dia (position)",
+    "fitness": 44.03353849371345,
+    "return_pct": 44.03353849371345,
+    "trades": 6,
+    "win_rate": 83.33333333333334,
+    "avg_profit": 7.560646334431851,
+    "avg_hold": 3.6666666666666665,
+    "final_equity": 14403.353849371346
+  }
+]

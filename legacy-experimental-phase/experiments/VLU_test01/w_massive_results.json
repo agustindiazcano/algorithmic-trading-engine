@@ -1,0 +1,9 @@
+{
+  "test": "Massive Scale (1M Obstacles, 40k Agents)",
+  "results": {
+    "w": { "time_ms": 29269, "food": 7999 },
+    "ants": { "time_ms": 2267, "food": 61767 },
+    "fuzzy": { "time_ms": 46105, "food": 6687 },
+    "bees": { "time_ms": 1891, "food": 6291 }
+  }
+}

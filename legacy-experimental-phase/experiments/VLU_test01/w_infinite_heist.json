@@ -1,0 +1,7 @@
+{
+  "test_type": "60s Combinatorial Stress Test",
+  "traditional_pps": 13.7474,
+  "w_pps": 87065.7,
+  "problems_solved_w": 5153373,
+  "speedup_factor": 6333.23
+}

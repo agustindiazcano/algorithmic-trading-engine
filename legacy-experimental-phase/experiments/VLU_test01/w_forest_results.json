@@ -1,0 +1,8 @@
+{
+  "experiment": "Decision Factory (Random Forest)",
+  "samples": 5000000,
+  "trees": 50,
+  "traditional_s": 0.762948,
+  "w_s": 2.03618,
+  "speedup": 0.374697
+}

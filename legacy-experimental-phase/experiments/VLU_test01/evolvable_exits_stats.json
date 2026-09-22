@@ -1,0 +1,34 @@
+{
+  "genome": {
+    "radius_base": 0.0869910128092163,
+    "volatility_multiplier": 3.1807666308866227,
+    "inertia_up": 0.9776789995019952,
+    "inertia_down": 0.85,
+    "volume_exhaustion_threshold": 0.8168159338278835,
+    "take_profit_tolerance": 0.0055147360781105745,
+    "stop_loss_pct": 0.04106677876938418,
+    "trailing_stop_trigger": 0.035101342291837166,
+    "trailing_stop_floor": 0.011970705187339316,
+    "rsi_overbought_threshold": 74.17226524966217,
+    "volume_spike_multiplier": 3.38028401509205,
+    "fitness": 5.916180193537116
+  },
+  "backtest": {
+    "initial_equity": 10000,
+    "final_equity": 10647.22022056064,
+    "profit": 647.2202205606409,
+    "return_pct": 6.472202205606403,
+    "fitness": 6.472202205606403,
+    "total_trades": 2,
+    "win_rate": 100.0,
+    "avg_hold_time": 7.0,
+    "avg_profit_pct": 3.433605028389386
+  },
+  "exit_reasons": {
+    "geometric_tp": 2,
+    "stop_loss": 0,
+    "trailing_stop": 0,
+    "rsi_reversal": 0,
+    "volume_spike": 0
+  }
+}

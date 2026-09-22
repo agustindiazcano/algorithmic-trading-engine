@@ -1,0 +1,7 @@
+{
+  "experiment": "Data Avalanche (Fraud Detection)",
+  "transactions": 50000000,
+  "traditional_s": 0.999074,
+  "w_s": 1.38413,
+  "speedup": 0.721809
+}

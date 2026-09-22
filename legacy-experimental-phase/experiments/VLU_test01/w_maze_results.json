@@ -1,0 +1,8 @@
+{
+  "experiment": "Chaos Maze (Dense Pathfinding)",
+  "robots": 1000000,
+  "obstacles_local": 128,
+  "traditional_s": 0.108232,
+  "w_s": 0.082511,
+  "speedup": 1.31173
+}

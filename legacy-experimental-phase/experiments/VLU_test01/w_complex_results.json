@@ -1,0 +1,26 @@
+{
+  "experiment": "Complex Dynamic Foraging",
+  "iterations": 1000,
+  "results": {
+    "w": {
+      "avg_time_us": 321.097,
+      "food_collected": 1,
+      "score_per_us": 0.00311432
+    },
+    "ants": {
+      "avg_time_us": 13.893,
+      "food_collected": 6479,
+      "score_per_us": 466.35
+    },
+    "fuzzy": {
+      "avg_time_us": 338.049,
+      "food_collected": 0,
+      "score_per_us": 0
+    },
+    "bees": {
+      "avg_time_us": 15.09,
+      "food_collected": 36,
+      "score_per_us": 2.38569
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "results": [
+    { "test": "SIMD Divergence", "conditional_s": 1.34691, "w_s": 1.15359, "speedup": 1.16758 },
+    { "test": "Dense Fluid Interaction", "conditional_s": 0, "w_s": 0, "speedup": nan },
+    { "test": "Fast Math Control", "conditional_s": 0.088372, "w_s": 0.051621, "speedup": 1.71194 }
+  ]
+}

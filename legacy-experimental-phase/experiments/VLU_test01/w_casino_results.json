@@ -1,0 +1,8 @@
+{
+  "experiment": "Quantum Casino (Montecarlo)",
+  "spins": 100000000,
+  "strategies": 20,
+  "traditional_s": 1.20917,
+  "w_s": 0.290715,
+  "speedup": 4.15928
+}
