@@ -1,3 +1,2 @@
 """Structured logging."""
 
-pass

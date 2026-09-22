@@ -1,3 +1,2 @@
 """System exceptions."""
 
-pass
