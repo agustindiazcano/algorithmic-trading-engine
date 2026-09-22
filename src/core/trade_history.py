@@ -1,10 +1,10 @@
 """Temporary file-based persistence for Phase 1."""
 
-import os
 import json
-from typing import Optional
+import os
 
-def calculate_total_profit(file_path: str) -> Optional[float]:
+
+def calculate_total_profit(file_path: str) -> float | None:
     """
     Reads a JSON trade-history file and sums each trade's profit.usdt field.
     

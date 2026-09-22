@@ -1,3 +1,2 @@
 """Pydantic Settings (.env)"""
 
-pass

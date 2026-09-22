@@ -1,3 +1,2 @@
 """Test risk."""
 
-pass

@@ -1,9 +1,8 @@
 import json
-import os
-from typing import Any
-import pytest
+
 # We haven't implemented calculate_total_profit in src/core/trade_history.py yet
 from src.core.trade_history import calculate_total_profit
+
 
 def test_calculate_total_profit_valid_file(tmp_path):
     # Asserts that calling the function with a valid path to a JSON file containing sample trades with profit.usdt values returns the correct sum.

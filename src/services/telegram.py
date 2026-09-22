@@ -1,3 +1,2 @@
 """Notifications"""
 
-pass

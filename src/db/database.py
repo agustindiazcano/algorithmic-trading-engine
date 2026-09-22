@@ -1,3 +1,2 @@
 """SQLAlchemy connection / session"""
 
-pass
