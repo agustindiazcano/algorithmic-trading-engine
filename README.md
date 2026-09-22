@@ -208,23 +208,31 @@ crypto_bot_project/
 ├── .env.example
 ├── README.md
 │
-├── legacy/                 # early prototypes and original scripts
+├── legacy-experimental-phase/       # early prototypes, original scripts and experiments
+│   ├── wy_multicoin_engine_v47.py
+│   ├── wy_function_winners_list_v03.py
+│   └── experiments/
+│       ├── VLU_test01/              # C++/Python optimization & benchmark tests
+│       ├── VLU_test02/              # neuro-plastic & symbolic trading experiments
+│       └── VLU_test03/              # high-frequency & volatility trading models
+│
 ├── docs/
-│   ├── strategies/         # one doc per model/strategy
+│   ├── strategies/                  # one doc per model/strategy
 │   │   ├── macd-dea-crossover.md
 │   │   └── bollinger-lateral.md
-│   └── research.md         # log of prototypes: what worked, what failed, why
+│   └── research.md                  # log of prototypes: what worked, what failed, why
 │
 ├── src/
-│   ├── main.py                     # Entry point (FastAPI + background tasks)
+│   ├── main.py                      # Entry point (FastAPI + background tasks)
 │   │
 │   ├── api/
-│   │   └── routes.py               # GET /status, GET /trades, POST /pause, etc.
+│   │   └── routes.py                # GET /status, GET /trades, POST /pause, etc.
 │   │
 │   ├── core/
 │   │   ├── config.py                # Pydantic Settings (.env)
 │   │   ├── exceptions.py
-│   │   └── logger.py
+│   │   ├── logger.py
+│   │   └── trade_history.py         # Total profit calculation and file persistence
 │   │
 │   ├── db/
 │   │   ├── models.py                # TradeHistory, SystemLog, Candle
@@ -268,9 +276,13 @@ crypto_bot_project/
 │       └── evolve.py                # Selection, crossover, mutation loop (DEAP-based)
 │
 └── tests/
-    ├── test_indicators.py
-    ├── test_strategy.py
-    └── test_risk.py
+    ├── unit/
+    │   ├── core/
+    │   │   └── test_trade_history.py
+    │   ├── trading/
+    │   └── market_context/
+    ├── integration/
+    └── performance/
 ```
 
 ---
