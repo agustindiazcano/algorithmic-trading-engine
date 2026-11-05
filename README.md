@@ -201,7 +201,7 @@ README's Phase 3 and Phase 4 sections.
 ## Autor
 
 Agustin Diaz- Cano
-MS Candidate, Systems Engineering (UTN)
+MS Candidate, Systems Engineering (UTN FRBA, Argentina)
 
 ---
 
